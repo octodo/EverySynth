@@ -5,7 +5,7 @@
 
     A multi-timbral AudioUnit to control external synthesizers.
     
-                        http://github.com/talanis85/everysynth
+                        http://github.com/talanis85/EverySynth
                         (c) 2010 Philip Kranz
 
 I. HISTORY
@@ -69,3 +69,12 @@ III. TODO
    i.e. you program a patch in your device, then you send it to the plugin,
    the plugin saves the SysEx data and transmits it back to your device at
    patch select. => Infinite number of patches!
+
+IV. HOW TO BUILD
+
+Dependencies:
+ 
+ o Xcode 3.2.2
+ 
+The Xcode project should build out of the box. If not, please tell me!
+
