@@ -58,7 +58,8 @@ ComponentResult EverySynth::Initialize()
         Parts().GetElement(i)->UseIndexedParameters(kNumberOfChannelParameters);
         Parts().GetElement(i)->SetParameter(kParam_Active, kDefaultValue_Active);
         Parts().GetElement(i)->SetParameter(kParam_MidiControlType, kDefaultValue_MidiControlType);
-        Parts().GetElement(i)->SetParameter(kParam_MidiControlPatch_Bank, kDefaultValue_MidiControlPatch_Bank);
+        Parts().GetElement(i)->SetParameter(kParam_MidiControlPatch_BankMSB, kDefaultValue_MidiControlPatch_BankMSB);
+        Parts().GetElement(i)->SetParameter(kParam_MidiControlPatch_BankLSB, kDefaultValue_MidiControlPatch_BankLSB);
         Parts().GetElement(i)->SetParameter(kParam_MidiControlPatch_Patch, kDefaultValue_MidiControlPatch_Patch);
         Parts().GetElement(i)->SetParameter(kParam_Volume, kDefaultValue_Volume);
     }
@@ -141,13 +142,19 @@ ComponentResult	EverySynth::GetParameterInfo(AudioUnitScope inScope,
                 outParameterInfo.maxValue = midiControlType_LastEntry-1;
                 outParameterInfo.defaultValue = kDefaultValue_MidiControlType;
                 break;
-            case kParam_MidiControlPatch_Bank:
-                AUBase::FillInParameterName (outParameterInfo, kParamName_MidiControlPatch_Bank, false);
+            case kParam_MidiControlPatch_BankMSB:
+                AUBase::FillInParameterName (outParameterInfo, kParamName_MidiControlPatch_BankMSB, false);
                 outParameterInfo.unit = kAudioUnitParameterUnit_Indexed;
                 outParameterInfo.minValue = 0;
-                outParameterInfo.maxValue = 6;      // Should actually be a bit more,
-                                                    // but it's enough for my Roland JV-1010 ;)
-                outParameterInfo.defaultValue = kDefaultValue_MidiControlPatch_Bank;
+                outParameterInfo.maxValue = 127;
+                outParameterInfo.defaultValue = kDefaultValue_MidiControlPatch_BankMSB;
+                break;
+            case kParam_MidiControlPatch_BankLSB:
+                AUBase::FillInParameterName (outParameterInfo, kParamName_MidiControlPatch_BankLSB, false);
+                outParameterInfo.unit = kAudioUnitParameterUnit_Indexed;
+                outParameterInfo.minValue = 0;
+                outParameterInfo.maxValue = 127;
+                outParameterInfo.defaultValue = kDefaultValue_MidiControlPatch_BankLSB;
                 break;
             case kParam_MidiControlPatch_Patch:
                 AUBase::FillInParameterName (outParameterInfo, kParamName_MidiControlPatch_Patch, false);
@@ -234,7 +241,8 @@ ComponentResult EverySynth::GetParameterValueStrings(AudioUnitScope inScope,
 			
 			return noErr;
 		}
-		else if (inParameterID == kParam_MidiControlPatch_Bank) {
+/*
+		else if (inParameterID == kParam_MidiControlPatch_BankMSB || inParameterID == kParam_MidiControlPatch_BankLSB) {
 			if (outStrings == NULL) return noErr;
 			
 			CFStringRef bankNames[7] = {
@@ -251,6 +259,7 @@ ComponentResult EverySynth::GetParameterValueStrings(AudioUnitScope inScope,
 			
 			return noErr;
 		}
+*/
 		else if (inParameterID == kParam_MidiControlType) {
 			if (outStrings == NULL) return noErr;
 			
@@ -263,12 +272,12 @@ ComponentResult EverySynth::GetParameterValueStrings(AudioUnitScope inScope,
 			
 			return noErr;
 		}
-		else if (inParameterID == kParam_MidiControlPatch_Patch) {
+		else if (inParameterID == kParam_MidiControlPatch_Patch || inParameterID == kParam_MidiControlPatch_BankMSB || inParameterID == kParam_MidiControlPatch_BankLSB) {
 			if (outStrings == NULL) return noErr;
 			
 			CFStringRef patchNames[128];
 			for (int i=0;i<128;i++) {
-				patchNames[i] = CFStringCreateWithFormat(CFAllocatorGetDefault(),NULL,CFSTR("%d"),i+1);
+				patchNames[i] = CFStringCreateWithFormat(CFAllocatorGetDefault(),NULL,CFSTR("%d"),i);
 			}
 			
 			*outStrings = CFArrayCreate(CFAllocatorGetDefault(), (const void**)patchNames, 128, NULL);
@@ -295,8 +304,8 @@ ComponentResult EverySynth::GetPropertyInfo (AudioUnitPropertyID inID,
                 return noErr;
         }
     }
-    /*
-        // Cocoa UI stuff. For later use.
+
+        // Cocoa UI stuff.
       
     else if (inScope == kAudioUnitScope_Global) {
         switch (inID) {
@@ -306,7 +315,7 @@ ComponentResult EverySynth::GetPropertyInfo (AudioUnitPropertyID inID,
                 return noErr;
         }
     }
-     */
+
     
     return MusicDeviceBase::GetPropertyInfo(inID, inScope, inElement, outDataSize, outWritable);
 }
@@ -325,19 +334,19 @@ ComponentResult EverySynth::GetProperty(AudioUnitPropertyID inID,
                 return noErr;
         }
     }
-    /*
+
         // More Cocoa UI stuff.
 
     else if (inScope == kAudioUnitScope_Global) {
         switch (inID) {
             case kAudioUnitProperty_CocoaUI:
                 // Look for a resource in the main bundle by name and type.
-                CFBundleRef bundle = CFBundleGetBundleWithIdentifier(CFSTR("net.pmlk.audiounit.EverySynth"));
+                CFBundleRef bundle = CFBundleGetBundleWithIdentifier(CFSTR("net.pmlk.audiounit.EverySynth.CocoaUI"));
      
                 if (bundle == NULL) return fnfErr;
      
                 CFURLRef bundleURL = CFBundleCopyResourceURL(bundle, 
-                                                             CFSTR("CocoaViewFactory"), 
+                                                             CFSTR("CocoaUI"), 
                                                              CFSTR("bundle"), 
                                                              NULL);
      
@@ -350,7 +359,7 @@ ComponentResult EverySynth::GetProperty(AudioUnitPropertyID inID,
                 return noErr;
         }
     }
-     */
+
     
 	return MusicDeviceBase::GetProperty (inID, inScope, inElement, outData);
 }
@@ -488,7 +497,7 @@ void EverySynth::UpdateMidiDevices()
  */
 void EverySynth::InitHardware()
 {
-	Float32 bank, patch, volume;
+	Float32 bank_msb, bank_lsb, patch, volume;
 	UInt8 channel;
 	int controlType;
 	AUElement * element;
@@ -511,19 +520,27 @@ void EverySynth::InitHardware()
 		
 		switch (controlType) {
 			case midiControlType_PatchSelect:
-				bank = element->GetParameter(kParam_MidiControlPatch_Bank);
-				patch = element->GetParameter(kParam_MidiControlPatch_Patch);
+				bank_msb = element->GetParameter(kParam_MidiControlPatch_BankMSB);
+				bank_lsb = element->GetParameter(kParam_MidiControlPatch_BankLSB);				
+                patch = element->GetParameter(kParam_MidiControlPatch_Patch);
 				volume = element->GetParameter(kParam_Volume);
+                
 				MIDIPacketList pktlist;
 				MIDIPacket * packet = MIDIPacketListInit(&pktlist);
 				UInt8 data[3];
 				
-				// Bank select
+				// Bank select MSB
 				data[0] = 0xB0 | channel;
 				data[1] = 0x00;
-				data[2] = (UInt8)bank;
+				data[2] = (UInt8)bank_msb;
 				packet = MIDIPacketListAdd(&pktlist,sizeof(pktlist),packet,0,3,data);
-				
+
+				// Bank select LSB
+				data[0] = 0xB0 | channel;
+				data[1] = 0x20;
+				data[2] = (UInt8)bank_lsb;
+				packet = MIDIPacketListAdd(&pktlist,sizeof(pktlist),packet,0,3,data);
+                
 				// Patch select
 				data[0] = 0xC0 | channel;
 				data[1] = (UInt8)patch;

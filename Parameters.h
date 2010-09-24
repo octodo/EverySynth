@@ -27,7 +27,8 @@
     - Active                    (Indexed) Use this part (0 or 1)
     - MidiControlType           (Indexed) How to switch patches. Currently only
                                 0 = Bank/Patch select.
-    - MidiControlPatch_Bank     (Indexed) Bank for Patch select.
+    - MidiControlPatch_Bank_MSB (MIDIController) Bank MSB for Patch select.
+    - MidiControlPatch_Bank_LSB (MIDIController) Bank LSB for Patch select.
     - MidiControlPatch_Patch    (Indexed) Patch for Patch select.
     - Volume                    (Float) Channel volume.
  */
@@ -36,12 +37,12 @@
 
 // global parameters
 static const int kDefaultValue_MidiOutputDevice = 0;
-//static const int kDefaultValue_ActiveChannels = 1;
 
 // channel parameters
 static const int kDefaultValue_Active = 0;
 static const int kDefaultValue_MidiControlType = 0;
-static const int kDefaultValue_MidiControlPatch_Bank = 0;
+static const int kDefaultValue_MidiControlPatch_BankMSB = 0;
+static const int kDefaultValue_MidiControlPatch_BankLSB = 0;
 static const int kDefaultValue_MidiControlPatch_Patch = 0;
 static const int kDefaultValue_Volume = 100;
 
@@ -53,7 +54,8 @@ static CFStringRef kParamName_MidiOutputDevice = CFSTR("Output Device");
 // channel parameters
 static CFStringRef kParamName_Active = CFSTR("Active");
 static CFStringRef kParamName_MidiControlType = CFSTR("Control Type");
-static CFStringRef kParamName_MidiControlPatch_Bank = CFSTR("Bank");
+static CFStringRef kParamName_MidiControlPatch_BankMSB = CFSTR("Bank MSB");
+static CFStringRef kParamName_MidiControlPatch_BankLSB = CFSTR("Bank LSB");
 static CFStringRef kParamName_MidiControlPatch_Patch = CFSTR("Patch");
 static CFStringRef kParamName_Volume = CFSTR("Volume");
 
@@ -63,7 +65,8 @@ static CFStringRef kParamName_Volume = CFSTR("Volume");
 enum {
 	kParam_Active,
 	kParam_MidiControlType,
-	kParam_MidiControlPatch_Bank,
+	kParam_MidiControlPatch_BankMSB,
+	kParam_MidiControlPatch_BankLSB,
 	kParam_MidiControlPatch_Patch,
 	kParam_Volume,
 	
