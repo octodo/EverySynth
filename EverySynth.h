@@ -91,13 +91,14 @@ public:
     
 	virtual bool				StreamFormatWritable(AudioUnitScope             scope,
                                                      AudioUnitElement           element) { return true; }
-
+/*
 	virtual OSStatus			GetInstrumentCount (	UInt32 &outInstCount) const;
 
 	virtual OSStatus			PrepareInstrument(MusicDeviceInstrumentID inInstrument);
     
 	virtual OSStatus			ReleaseInstrument(MusicDeviceInstrumentID inInstrument);
-    
+*/
+ 
 protected:
 	virtual OSStatus	HandleMidiEvent(UInt8 	inStatus,
                                         UInt8 	inChannel,
