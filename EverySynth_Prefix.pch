@@ -1,0 +1,8 @@
+#if DEBUG_PRINT
+	#define DEBUG_OUT(x) printf(x); printf("\n");
+    #define DEBUG_OUT1(x,y) printf(x,y); printf("\n");
+#else
+	#define DEBUG_OUT(x)
+    #define DEBUG_OUT1(x)
+#endif
+

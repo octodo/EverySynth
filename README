@@ -1,0 +1,71 @@
+
+    *********************************
+    *          EverySynth           *
+    *********************************
+
+    A multi-timbral AudioUnit to control external synthesizers.
+    
+                        http://github.com/talanis85/everysynth
+                        (c) 2010 Philip Kranz
+
+I. HISTORY
+
+This plugin was originally created in an effort to be able to
+use external synthesizers with Apple MainStage (shipped with
+Logic Pro since version 8).
+
+Shortly after I finished the first version (which was mono-timbral),
+Apple released version Logic Pro 9 together with MainStage 2.
+That version had that "External Instrument" feature that promised
+to accomplish exactly the same thing, so I dropped the development
+of the plugin because I thought everything would be solved.
+
+But Apple failed gloriously!
+
+The external instrument feature worked until you wanted to use more
+than one of the 16 possible layers of a multi-timbral syntesizer.
+Developing such a feature with only mono-timbrality in mind is like
+broadcasting black and white TV in 2010.
+
+Yes, you CAN try to get MainStage to use more than one MIDI channel,
+by using several instances of the external instrument channel strip,
+but it's a gigantic pain in the ass. You will be unable to set the
+volumes of the individual channels, you will have to click about ten
+buttons to disable a certain sound and you will despair finding the
+right patch no / bank MSB / bank LSB for the sound you are trying to
+use.
+And you will be the complete idiot when you try to do all this during
+rehearsal sessions.
+
+Oh, and did I mention that they broke it in version 2.1.1, where you
+could not do bank select any more? (who cares, nobody wants to use
+something else but bank 0 anyway!)
+
+Okay, so I commenced development again.
+
+II. FEATURES
+
+ o 9-channel multi-timbrality in one instance of the plugin (*)
+ o Automatic Bank/Patch select
+ o Mix volumes of individual channels
+ o Simply activate/deactivate them
+
+ (*) Why the hell 9 channels?? Yeah, because of a bug in Leopard that
+ causes a host to crash when it has to display too many parameters.
+ This was fixed in Snow Leopard.
+
+III. TODO
+
+ o A nice Cocoa GUI which allows for:
+    - easier use
+    - sound databases for many different devices
+      to select sounds by name
+ o Maybe handle the audio signal from the synth directly in the plugin,
+   so that you don't need an extra audio track for the input.
+ o More control over the individual parts:
+    - filtering of sustain/modulation/velocity/etc.
+    - some common midi cc's like reverb, chorus, expression
+ o The killer feature: Additionally support patch select by midi patch dump,
+   i.e. you program a patch in your device, then you send it to the plugin,
+   the plugin saves the SysEx data and transmits it back to your device at
+   patch select. => Infinite number of patches!
