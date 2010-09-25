@@ -17,6 +17,31 @@
 		1B14DA8B124CC0BB00E28FC6 /* EverySynth.component in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D01CCD20486CAD60068D4B7 /* EverySynth.component */; };
 		1B14DAE6124CC8FE00E28FC6 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B14DAE4124CC8FE00E28FC6 /* CAHostTimeBase.cpp */; };
 		1B14DAE7124CC8FE00E28FC6 /* CAHostTimeBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B14DAE5124CC8FE00E28FC6 /* CAHostTimeBase.h */; };
+		1BE198E6124E26F3006DE1BF /* CAUGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CD124E26F3006DE1BF /* CAUGui.cpp */; };
+		1BE198E7124E26F3006DE1BF /* CAUGui.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198CE124E26F3006DE1BF /* CAUGui.h */; };
+		1BE198E8124E26F3006DE1BF /* CAUGuiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */; };
+		1BE198E9124E26F3006DE1BF /* CAUGuiButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198D0124E26F3006DE1BF /* CAUGuiButton.h */; };
+		1BE198EA124E26F3006DE1BF /* CAUGuiConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198D1124E26F3006DE1BF /* CAUGuiConfig.h */; };
+		1BE198EB124E26F3006DE1BF /* CAUGuiControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198D2124E26F3006DE1BF /* CAUGuiControl.cpp */; };
+		1BE198EC124E26F3006DE1BF /* CAUGuiControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198D3124E26F3006DE1BF /* CAUGuiControl.h */; };
+		1BE198ED124E26F3006DE1BF /* CAUGuiDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198D4124E26F3006DE1BF /* CAUGuiDisplay.cpp */; };
+		1BE198EE124E26F3006DE1BF /* CAUGuiDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198D5124E26F3006DE1BF /* CAUGuiDisplay.h */; };
+		1BE198EF124E26F3006DE1BF /* CAUGuiKnob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198D6124E26F3006DE1BF /* CAUGuiKnob.cpp */; };
+		1BE198F0124E26F3006DE1BF /* CAUGuiKnob.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198D7124E26F3006DE1BF /* CAUGuiKnob.h */; };
+		1BE198F1124E26F3006DE1BF /* CAUGuiMeter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198D8124E26F3006DE1BF /* CAUGuiMeter.cpp */; };
+		1BE198F2124E26F3006DE1BF /* CAUGuiMeter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198D9124E26F3006DE1BF /* CAUGuiMeter.h */; };
+		1BE198F3124E26F3006DE1BF /* CAUGuiMoreImages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198DA124E26F3006DE1BF /* CAUGuiMoreImages.cpp */; };
+		1BE198F4124E26F3006DE1BF /* CAUGuiMoreImages.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198DB124E26F3006DE1BF /* CAUGuiMoreImages.h */; };
+		1BE198F5124E26F3006DE1BF /* CAUGuiPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198DC124E26F3006DE1BF /* CAUGuiPane.cpp */; };
+		1BE198F6124E26F3006DE1BF /* CAUGuiPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198DD124E26F3006DE1BF /* CAUGuiPane.h */; };
+		1BE198F7124E26F3006DE1BF /* CAUGuiPoof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198DE124E26F3006DE1BF /* CAUGuiPoof.cpp */; };
+		1BE198F8124E26F3006DE1BF /* CAUGuiPoof.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198DF124E26F3006DE1BF /* CAUGuiPoof.h */; };
+		1BE198F9124E26F3006DE1BF /* CAUGuiSelector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198E0124E26F3006DE1BF /* CAUGuiSelector.cpp */; };
+		1BE198FA124E26F3006DE1BF /* CAUGuiSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198E1124E26F3006DE1BF /* CAUGuiSelector.h */; };
+		1BE198FB124E26F3006DE1BF /* CAUGuiSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198E2124E26F3006DE1BF /* CAUGuiSlider.cpp */; };
+		1BE198FC124E26F3006DE1BF /* CAUGuiSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198E3124E26F3006DE1BF /* CAUGuiSlider.h */; };
+		1BE198FD124E26F3006DE1BF /* CAUGuiTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198E4124E26F3006DE1BF /* CAUGuiTools.cpp */; };
+		1BE198FE124E26F3006DE1BF /* CAUGuiTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198E5124E26F3006DE1BF /* CAUGuiTools.h */; };
 		3EEA126E089847F5002C6BFC /* CAVectorUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA126B089847F5002C6BFC /* CAVectorUnit.cpp */; };
 		3EEA126F089847F5002C6BFC /* CAVectorUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEA126C089847F5002C6BFC /* CAVectorUnit.h */; };
 		3EEA1270089847F5002C6BFC /* CAVectorUnitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EEA126D089847F5002C6BFC /* CAVectorUnitTypes.h */; };
@@ -90,6 +115,31 @@
 		1B14DAE5124CC8FE00E28FC6 /* CAHostTimeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAHostTimeBase.h; path = Extras/CoreAudio/PublicUtility/CAHostTimeBase.h; sourceTree = DEVELOPER_DIR; };
 		1B14DBC4124D16BD00E28FC6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B14DBC5124D16BD00E28FC6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		1BE198CD124E26F3006DE1BF /* CAUGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGui.cpp; sourceTree = "<group>"; };
+		1BE198CE124E26F3006DE1BF /* CAUGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGui.h; sourceTree = "<group>"; };
+		1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiButton.cpp; sourceTree = "<group>"; };
+		1BE198D0124E26F3006DE1BF /* CAUGuiButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiButton.h; sourceTree = "<group>"; };
+		1BE198D1124E26F3006DE1BF /* CAUGuiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiConfig.h; sourceTree = "<group>"; };
+		1BE198D2124E26F3006DE1BF /* CAUGuiControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiControl.cpp; sourceTree = "<group>"; };
+		1BE198D3124E26F3006DE1BF /* CAUGuiControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiControl.h; sourceTree = "<group>"; };
+		1BE198D4124E26F3006DE1BF /* CAUGuiDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiDisplay.cpp; sourceTree = "<group>"; };
+		1BE198D5124E26F3006DE1BF /* CAUGuiDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiDisplay.h; sourceTree = "<group>"; };
+		1BE198D6124E26F3006DE1BF /* CAUGuiKnob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiKnob.cpp; sourceTree = "<group>"; };
+		1BE198D7124E26F3006DE1BF /* CAUGuiKnob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiKnob.h; sourceTree = "<group>"; };
+		1BE198D8124E26F3006DE1BF /* CAUGuiMeter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiMeter.cpp; sourceTree = "<group>"; };
+		1BE198D9124E26F3006DE1BF /* CAUGuiMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiMeter.h; sourceTree = "<group>"; };
+		1BE198DA124E26F3006DE1BF /* CAUGuiMoreImages.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiMoreImages.cpp; sourceTree = "<group>"; };
+		1BE198DB124E26F3006DE1BF /* CAUGuiMoreImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiMoreImages.h; sourceTree = "<group>"; };
+		1BE198DC124E26F3006DE1BF /* CAUGuiPane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiPane.cpp; sourceTree = "<group>"; };
+		1BE198DD124E26F3006DE1BF /* CAUGuiPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiPane.h; sourceTree = "<group>"; };
+		1BE198DE124E26F3006DE1BF /* CAUGuiPoof.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiPoof.cpp; sourceTree = "<group>"; };
+		1BE198DF124E26F3006DE1BF /* CAUGuiPoof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiPoof.h; sourceTree = "<group>"; };
+		1BE198E0124E26F3006DE1BF /* CAUGuiSelector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiSelector.cpp; sourceTree = "<group>"; };
+		1BE198E1124E26F3006DE1BF /* CAUGuiSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiSelector.h; sourceTree = "<group>"; };
+		1BE198E2124E26F3006DE1BF /* CAUGuiSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiSlider.cpp; sourceTree = "<group>"; };
+		1BE198E3124E26F3006DE1BF /* CAUGuiSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiSlider.h; sourceTree = "<group>"; };
+		1BE198E4124E26F3006DE1BF /* CAUGuiTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiTools.cpp; sourceTree = "<group>"; };
+		1BE198E5124E26F3006DE1BF /* CAUGuiTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiTools.h; sourceTree = "<group>"; };
 		3EEA126B089847F5002C6BFC /* CAVectorUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = CAVectorUnit.cpp; sourceTree = "<group>"; };
 		3EEA126C089847F5002C6BFC /* CAVectorUnit.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CAVectorUnit.h; sourceTree = "<group>"; };
 		3EEA126D089847F5002C6BFC /* CAVectorUnitTypes.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CAVectorUnitTypes.h; sourceTree = "<group>"; };
@@ -191,6 +241,7 @@
 		08FB77ADFE841716C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1BE198CC124E26F3006DE1BF /* CAUGui */,
 				1B14D87D124CBE2F00E28FC6 /* EverySynth_Prefix.pch */,
 				8BA05A56072072A900365D66 /* AU Source */,
 				8BA05AEB0720742700365D66 /* PublicUtility */,
@@ -205,6 +256,38 @@
 				8D01CCD20486CAD60068D4B7 /* EverySynth.component */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1BE198CC124E26F3006DE1BF /* CAUGui */ = {
+			isa = PBXGroup;
+			children = (
+				1BE198CD124E26F3006DE1BF /* CAUGui.cpp */,
+				1BE198CE124E26F3006DE1BF /* CAUGui.h */,
+				1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */,
+				1BE198D0124E26F3006DE1BF /* CAUGuiButton.h */,
+				1BE198D1124E26F3006DE1BF /* CAUGuiConfig.h */,
+				1BE198D2124E26F3006DE1BF /* CAUGuiControl.cpp */,
+				1BE198D3124E26F3006DE1BF /* CAUGuiControl.h */,
+				1BE198D4124E26F3006DE1BF /* CAUGuiDisplay.cpp */,
+				1BE198D5124E26F3006DE1BF /* CAUGuiDisplay.h */,
+				1BE198D6124E26F3006DE1BF /* CAUGuiKnob.cpp */,
+				1BE198D7124E26F3006DE1BF /* CAUGuiKnob.h */,
+				1BE198D8124E26F3006DE1BF /* CAUGuiMeter.cpp */,
+				1BE198D9124E26F3006DE1BF /* CAUGuiMeter.h */,
+				1BE198DA124E26F3006DE1BF /* CAUGuiMoreImages.cpp */,
+				1BE198DB124E26F3006DE1BF /* CAUGuiMoreImages.h */,
+				1BE198DC124E26F3006DE1BF /* CAUGuiPane.cpp */,
+				1BE198DD124E26F3006DE1BF /* CAUGuiPane.h */,
+				1BE198DE124E26F3006DE1BF /* CAUGuiPoof.cpp */,
+				1BE198DF124E26F3006DE1BF /* CAUGuiPoof.h */,
+				1BE198E0124E26F3006DE1BF /* CAUGuiSelector.cpp */,
+				1BE198E1124E26F3006DE1BF /* CAUGuiSelector.h */,
+				1BE198E2124E26F3006DE1BF /* CAUGuiSlider.cpp */,
+				1BE198E3124E26F3006DE1BF /* CAUGuiSlider.h */,
+				1BE198E4124E26F3006DE1BF /* CAUGuiTools.cpp */,
+				1BE198E5124E26F3006DE1BF /* CAUGuiTools.h */,
+			);
+			path = CAUGui;
 			sourceTree = "<group>";
 		};
 		8BA05A56072072A900365D66 /* AU Source */ = {
@@ -337,6 +420,19 @@
 				1B14D889124CBE2F00E28FC6 /* EverySynthVersion.h in Headers */,
 				1B14D88A124CBE2F00E28FC6 /* Parameters.h in Headers */,
 				1B14DAE7124CC8FE00E28FC6 /* CAHostTimeBase.h in Headers */,
+				1BE198E7124E26F3006DE1BF /* CAUGui.h in Headers */,
+				1BE198E9124E26F3006DE1BF /* CAUGuiButton.h in Headers */,
+				1BE198EA124E26F3006DE1BF /* CAUGuiConfig.h in Headers */,
+				1BE198EC124E26F3006DE1BF /* CAUGuiControl.h in Headers */,
+				1BE198EE124E26F3006DE1BF /* CAUGuiDisplay.h in Headers */,
+				1BE198F0124E26F3006DE1BF /* CAUGuiKnob.h in Headers */,
+				1BE198F2124E26F3006DE1BF /* CAUGuiMeter.h in Headers */,
+				1BE198F4124E26F3006DE1BF /* CAUGuiMoreImages.h in Headers */,
+				1BE198F6124E26F3006DE1BF /* CAUGuiPane.h in Headers */,
+				1BE198F8124E26F3006DE1BF /* CAUGuiPoof.h in Headers */,
+				1BE198FA124E26F3006DE1BF /* CAUGuiSelector.h in Headers */,
+				1BE198FC124E26F3006DE1BF /* CAUGuiSlider.h in Headers */,
+				1BE198FE124E26F3006DE1BF /* CAUGuiTools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +524,18 @@
 				F78221E40ECE5CD000F413C6 /* AUBaseHelper.cpp in Sources */,
 				1B14D885124CBE2F00E28FC6 /* EverySynth.cpp in Sources */,
 				1B14DAE6124CC8FE00E28FC6 /* CAHostTimeBase.cpp in Sources */,
+				1BE198E6124E26F3006DE1BF /* CAUGui.cpp in Sources */,
+				1BE198E8124E26F3006DE1BF /* CAUGuiButton.cpp in Sources */,
+				1BE198EB124E26F3006DE1BF /* CAUGuiControl.cpp in Sources */,
+				1BE198ED124E26F3006DE1BF /* CAUGuiDisplay.cpp in Sources */,
+				1BE198EF124E26F3006DE1BF /* CAUGuiKnob.cpp in Sources */,
+				1BE198F1124E26F3006DE1BF /* CAUGuiMeter.cpp in Sources */,
+				1BE198F3124E26F3006DE1BF /* CAUGuiMoreImages.cpp in Sources */,
+				1BE198F5124E26F3006DE1BF /* CAUGuiPane.cpp in Sources */,
+				1BE198F7124E26F3006DE1BF /* CAUGuiPoof.cpp in Sources */,
+				1BE198F9124E26F3006DE1BF /* CAUGuiSelector.cpp in Sources */,
+				1BE198FB124E26F3006DE1BF /* CAUGuiSlider.cpp in Sources */,
+				1BE198FD124E26F3006DE1BF /* CAUGuiTools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
