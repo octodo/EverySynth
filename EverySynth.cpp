@@ -24,9 +24,6 @@
 
 COMPONENT_ENTRY(EverySynth)
 
-int kNumChannels = 9;
-// int kNumChannels = 16        /* 10.6 only, 10.5 is buggy! */
-
 #pragma mark FRAMEWORK METHODS
 
 EverySynth::EverySynth(AudioUnit component)

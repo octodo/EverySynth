@@ -33,6 +33,8 @@
     - Volume                    (Float) Channel volume.
  */
 
+#define kNumChannels 9
+
 /*** Default Values ***/
 
 // global parameters
