@@ -91,6 +91,11 @@ public:
     
 	virtual bool				StreamFormatWritable(AudioUnitScope             scope,
                                                      AudioUnitElement           element) { return true; }
+
+    virtual int		GetNumCustomUIComponents () { return 1; }
+	
+    virtual void 	GetUIComponentDescs (ComponentDescription* inDescArray);
+
 /*
 	virtual OSStatus			GetInstrumentCount (	UInt32 &outInstCount) const;
 

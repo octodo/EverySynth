@@ -320,7 +320,7 @@ bool CAUGuiCtrl::mustUpdate ()
 }
 
 
-static pascal OSStatus CAUGuiControlHandler ( EventHandlerCallRef myHandler, EventRef theEvent, void* userData )
+pascal OSStatus CAUGuiControlHandler ( EventHandlerCallRef myHandler, EventRef theEvent, void* userData )
 {
     #pragma unused (myHandler )
         

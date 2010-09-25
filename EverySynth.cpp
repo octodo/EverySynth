@@ -301,18 +301,6 @@ ComponentResult EverySynth::GetPropertyInfo (AudioUnitPropertyID inID,
                 return noErr;
         }
     }
-
-        // Cocoa UI stuff.
-      
-    else if (inScope == kAudioUnitScope_Global) {
-        switch (inID) {
-            case kAudioUnitProperty_CocoaUI:
-                outWritable = false;
-                outDataSize = sizeof (AudioUnitCocoaViewInfo);
-                return noErr;
-        }
-    }
-
     
     return MusicDeviceBase::GetPropertyInfo(inID, inScope, inElement, outDataSize, outWritable);
 }
@@ -332,33 +320,16 @@ ComponentResult EverySynth::GetProperty(AudioUnitPropertyID inID,
         }
     }
 
-        // More Cocoa UI stuff.
-
-    else if (inScope == kAudioUnitScope_Global) {
-        switch (inID) {
-            case kAudioUnitProperty_CocoaUI:
-                // Look for a resource in the main bundle by name and type.
-                CFBundleRef bundle = CFBundleGetBundleWithIdentifier(CFSTR("net.pmlk.audiounit.EverySynth.CocoaUI"));
-     
-                if (bundle == NULL) return fnfErr;
-     
-                CFURLRef bundleURL = CFBundleCopyResourceURL(bundle, 
-                                                             CFSTR("CocoaUI"), 
-                                                             CFSTR("bundle"), 
-                                                             NULL);
-     
-                if (bundleURL == NULL) return fnfErr;
-     
-                CFStringRef className = CFSTR("ESyn_CocoaViewFactory");
-                AudioUnitCocoaViewInfo cocoaInfo = { bundleURL, className };
-                *((AudioUnitCocoaViewInfo *)outData) = cocoaInfo;
-     
-                return noErr;
-        }
-    }
-
-    
 	return MusicDeviceBase::GetProperty (inID, inScope, inElement, outData);
+}
+
+void EverySynth::GetUIComponentDescs (ComponentDescription* inDescArray)
+{
+	inDescArray->componentType = 'auvw';
+	inDescArray->componentSubType = 'ESCV';
+	inDescArray->componentManufacturer = 'PMLK';
+	inDescArray->componentFlags = 0;
+	inDescArray->componentFlagsMask = 0;
 }
 
 OSStatus EverySynth::HandleMidiEvent(UInt8 inStatus,

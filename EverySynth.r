@@ -17,6 +17,7 @@
  */ 
 
 #include <AudioUnit/AudioUnit.r>
+#include <AudioUnit/AudioUnitCarbonView.r>
 
 #include "EverySynthVersion.h"
 
@@ -34,3 +35,16 @@
 
 #include "AUResources.r"
 
+#define kAudioUnitResID_EverySynthCarbonUI     2000
+
+#define RES_ID			kAudioUnitResID_EverySynthCarbonUI
+#define COMP_TYPE		'auvw'
+#define COMP_SUBTYPE	'ESCV'
+#define COMP_MANUF		'PMLK'
+
+#define VERSION			kEverySynthVersion
+#define NAME			"PMLK: EverySynthCarbonUI"
+#define DESCRIPTION		"EverySynth Carbon UI"
+#define ENTRY_POINT		"EverySynthCarbonUIEntry"
+
+#include "AUResources.r"

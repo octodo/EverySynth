@@ -10,7 +10,7 @@
 #ifndef __CAUGUI__CONFIG__ 
 #define __CAUGUI__CONFIG__
 
-#define AU_BUNDLE_IDENTIFIER "com.acme.demo.caugui"
+#define AU_BUNDLE_IDENTIFIER "net.pmlk.audiounits.EverySynth"
 
 #define CAUGUI_FONT "Monaco"
 
