@@ -28,6 +28,11 @@
 #include "CAUGuiPoof.h"
 #include "CAUGuiMoreImages.h"
 #include "CAUGuiMeter.h"
+#include "CAUGuiSelector.h"
+
+#include "CAUGuiList.h"
+#include "CAUGuiLabeledButton.h"
+#include "CAUGuiRadioArray.h"
 
 #include "Parameters.h"
 
@@ -50,7 +55,11 @@ public:
 	
 	virtual OSStatus CreateUI(Float32 xoffset, Float32 yoffset);
     
+    void activateChannelPane(int number);
+    
 private:
     CAUGuiMan * theGui;
+    CAUGuiLayeredPane * channelPane;
+    CAUGuiLabeledButton ** channelButtons;
+    CAUGuiRadioArray * channelButtonArray;
 };
-

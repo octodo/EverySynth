@@ -18,69 +18,65 @@
 
 #include "EverySynthCarbonUI.h"
 
+#define CHANNEL_PARAMETER(param, chan) channelParams[chan * kNumberOfChannelParameters + param]
 
 COMPONENT_ENTRY(EverySynthCarbonUI)
+
+void textProc_Volume(UInt32 value, char * text, void * userData)
+{
+    sprintf(text, "%d", value);
+}
+
+void radioArrayProc_ChannelSelect(UInt32 value, CAUGuiRadioArray* from, void* userData)
+{
+    ((EverySynthCarbonUI*)userData)->activateChannelPane(value);
+}
 
 OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 {
 	int XPos = (int) xoffset;
 	int YPos = (int) yoffset;
-
-	/*
-    CAAUParameter aKnob1		(mEditAudioUnit, kParam_Knob_1,		kAudioUnitScope_Global, 0);
-	CAAUParameter aKnob2		(mEditAudioUnit, kParam_Knob_2, 	kAudioUnitScope_Global, 0);
-	CAAUParameter aButtons1	(mEditAudioUnit, kParam_Buttons_1, 	kAudioUnitScope_Global, 0);
-	CAAUParameter aButtons2	(mEditAudioUnit, kParam_Buttons_2, 	kAudioUnitScope_Global, 0);
-	CAAUParameter aSlider1	(mEditAudioUnit, kParam_Slider_1, 	kAudioUnitScope_Global, 0);
-	CAAUParameter aSlider2	(mEditAudioUnit, kParam_Slider_2, 	kAudioUnitScope_Global, 0);
-	CAAUParameter aSlider3	(mEditAudioUnit, kParam_Slider_3, 	kAudioUnitScope_Global, 0);
-	CAAUParameter aDisplay1	(mEditAudioUnit, kParam_Display_1, 	kAudioUnitScope_Global, 0);
-     */
+    
+    CAAUParameter paramOutputDevice(mEditAudioUnit, kParam_MidiOutputDevice, kAudioUnitScope_Global, 0);
+    CAAUParameter ** channelParams = (CAAUParameter**) malloc(sizeof(CAAUParameter*) * kNumberOfChannelParameters * kNumChannels);
+    for (int i=0; i<kNumChannels; i++) {
+        for (int j=0; j<kNumberOfChannelParameters; j++) {
+            CHANNEL_PARAMETER(j, i) = new CAAUParameter(mEditAudioUnit, j, kAudioUnitScope_Part, i);
+        }
+    }
 	
 	theGui = new CAUGuiMan(this, XPos, YPos);
 	theGui->initialize();
 	
 	// Background image
-	CAUGuiGraphic* graBackground = new CAUGuiGraphic("background.png");
+	CAUGuiGraphic * graBackground = new CAUGuiGraphic("background.png");
     theGui->addImage(graBackground);
-	
-    /*
-	// Backgrounds for Layered Pane
-	CAUGuiGraphic* pane_back1 = new CAUGuiGraphic ( "pane1_back.png" ); myCAUGui->addImage( pane_back1 );
-	CAUGuiGraphic* pane_back2 = new CAUGuiGraphic ( "pane2_back.png" ); myCAUGui->addImage( pane_back2 );
-	
-	// Special Images for Control Foregrounds
-	
-	// this one orbits a center point
-	CAUGuiGraphic* round_handle = new CAUGuiSpinImage ( "round_handle.png", -0.375f, 0.375f, 0, 0, true ); myCAUGui->addImage( round_handle );
-	
-	// this one rotates around a center
-	CAUGuiGraphic* needle_handle = new CAUGuiSpinImage ( "knob_needle.png", -0.375f, 0.375f, 0, 0, false ); myCAUGui->addImage( needle_handle );
-	
-	// these shift within the drawing rectangle
-	CAUGuiGraphic* round_s_handle = new CAUGuiHandleImage ( "round_handle2.png", -1, 1 ); myCAUGui->addImage( round_s_handle );
-	
-	CAUGuiGraphic* horizontal_handle = new CAUGuiHandleImage ( "horizontal_handle.png", -1, 1 ); myCAUGui->addImage( horizontal_handle );
-	
-	// this crops by value within the drawing rectangle
-	CAUGuiGraphic* vu_image = new CAUGuiCroppingImage ( "ledchain.png", 0, 50, 2, 0 ); myCAUGui->addImage( vu_image );
-	
-	
-	// this just sits there and does nothing
-	CAUGuiGraphic* next_pane = new CAUGuiGraphic ( "next_pane.png" ); myCAUGui->addImage( next_pane );
-	
-	// Backgrounds for Controls
-	
-	CAUGuiGraphic* knob_back = new CAUGuiGraphic ( "knob_background.png" ); myCAUGui->addImage( knob_back );
+	CAUGuiGraphic * graChannelPaneBackground = new CAUGuiGraphic("channel_pane_background.png");
+    theGui->addImage(graChannelPaneBackground);
+
+    CAUGuiGraphic * graDeviceListBackground = new CAUGuiGraphic("device_list_background.png");
+    theGui->addImage(graDeviceListBackground);
+
+    CAUGuiGraphic * graMsbLsbBackground = new CAUGuiGraphic("msb_lsb_background.png");
+    theGui->addImage(graMsbLsbBackground);
+
+    // Buttons
+    CAUGuiGraphic * graChannelMute = new CAUGuiGraphic("channel_mute.png", 2);
+    theGui->addImage(graChannelMute);
+    CAUGuiGraphic * graDeviceType = new CAUGuiGraphic("device_type.png", 2);
+    theGui->addImage(graDeviceType);
+    CAUGuiGraphic * graPage = new CAUGuiGraphic("page.png", 2);
+    theGui->addImage(graPage);
+    CAUGuiGraphic * graChannelSelect = new CAUGuiGraphic("channel_select.png", 2);
+    theGui->addImage(graChannelSelect);
     
-	CAUGuiGraphic* h_slider_back = new CAUGuiGraphic ( "horizontal_slider_back.png" ); myCAUGui->addImage( h_slider_back );
-	
-	CAUGuiGraphic* v_slider_back = new CAUGuiGraphic ( "vertical_slider_back.png" ); myCAUGui->addImage( v_slider_back );
-	
-	CAUGuiGraphic* v_led_back = new CAUGuiGraphic ( "led_back.png" ); myCAUGui->addImage( v_led_back );
-	
-	CAUGuiGraphic* display_back = new CAUGuiGraphic ( "display_back.png" ); myCAUGui->addImage( display_back );
-    */
+    // Mixer channel strip
+    CAUGuiGraphic * graMixerVolumeBackground = new CAUGuiGraphic("mixer_volume_background.png");
+    theGui->addImage(graMixerVolumeBackground);
+    CAUGuiGraphic * graMixerVolumeHandle = new CAUGuiCroppingImage("mixer_volume_handle.png", 0, 83, 2, 0);
+    theGui->addImage(graMixerVolumeHandle);
+    CAUGuiGraphic * graMixerValueBackground = new CAUGuiGraphic("mixer_value_background.png");
+    theGui->addImage(graMixerValueBackground);
     
 	/***************************************
      
@@ -95,11 +91,98 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 	int height = CGImageGetHeight(graBackground->getImage());
 	
 	eRect where;
-	where.set ( 0, 0, width, height );
+	where.set(0, 0, width, height);
 	
+    // Background pane
 	CAUGuiPane* paneBackground = new CAUGuiPane(theGui, &where, graBackground);
 	theGui->addCtrl(paneBackground);
 	
+    // DeviceType button
+    where.set(13, 40, 231, 31);
+    CAUGuiLabeledButton * buttonDeviceType = new CAUGuiLabeledButton(theGui, 1, &where, graDeviceType, NULL, kPushButton);
+    buttonDeviceType->setText(CFSTR("Roland Fantom X"));
+    buttonDeviceType->setOnValue(1);
+    paneBackground->addCtrl(buttonDeviceType);
+    
+    // Mixer
+    eRect where_value;
+    eRect where_mute;
+    where.set(265, 53, 22, 181);
+    where_value.set(267, 221, 18, 11);
+    where_mute.set(265, 33, 22, 19);
+    for (int i=0; i<kNumChannels; i++) {
+        CAUGuiSlider * channelStrip = new CAUGuiSlider(theGui, *CHANNEL_PARAMETER(kParam_Volume, i), &where, 0, kCAUGui_res_100, graMixerVolumeHandle, graMixerVolumeBackground);
+        channelStrip->shrinkForeBounds(2, 2, 2, 13);
+        paneBackground->addCtrl(channelStrip);
+        where.offset(24, 0);
+        CAUGuiDisplay * channelVolumeDisplay = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_Volume, i), &where_value, kCAUGui_res_1, textProc_Volume, NULL, graMixerValueBackground);
+        channelVolumeDisplay->setFont("Copperplate");
+        channelVolumeDisplay->setFontSize(9.0);
+        channelVolumeDisplay->text_offset_y = 3;
+        channelVolumeDisplay->text_offset_x = -1;
+        paneBackground->addCtrl(channelVolumeDisplay);
+        where_value.offset(24, 0);
+        CAUGuiButton * channelMuteButton = new CAUGuiButton(theGui, *CHANNEL_PARAMETER(kParam_Active, i), &where_mute, graChannelMute, NULL, kOnOffButton);
+        paneBackground->addCtrl(channelMuteButton);
+        where_mute.offset(24, 0);
+    }
+    
+    // Output Device
+    where.set(14, 83, 229, 135);
+    /*
+    CAUGuiDisplay * deviceList = new CAUGuiDisplay(theGui, paramOutputDevice, &where, kCAUGui_res_1, NULL, NULL, graDeviceTypeInactive);
+    deviceList->generatePopUpMenue();
+    deviceList->text_offset_y = 7;
+     */
+    CAUGuiList * deviceList = new CAUGuiList(theGui, paramOutputDevice, &where, graDeviceListBackground);
+    paneBackground->addCtrl(deviceList);
+    
+    // Channel select buttons
+
+    /*
+    where.set(264, 242, 24, 23);
+
+    channelButtons = new CAUGuiLabeledButton*[kNumChannels];
+    for (int i=0; i<kNumChannels; i++) {
+        channelButtons[i] = new CAUGuiLabeledButton(theGui, 2, &where, graChannelSelect, NULL, kRadioButton);
+        channelButtons[i]->setText(CFStringCreateWithFormat(NULL, NULL, CFSTR("%d"), i+1));
+        channelButtons[i]->setUserProcedure(buttonProc_ChannelSelect, (void*)i);
+        channelButtons[i]->setOnValue(1);
+        paneBackground->addCtrl(channelButtons[i]);
+        where.offset(24, 0);
+    }
+     */
+    
+    where.set(264, 242, kNumChannels*24, 23);
+    channelButtonArray = new CAUGuiRadioArray(theGui, 9, &where, graChannelSelect, graDeviceType);
+    channelButtonArray->setUserProc(radioArrayProc_ChannelSelect, this);
+    paneBackground->addCtrl(channelButtonArray);
+
+    // kNumChannels Channel panes:
+    where.set(0, 268, 655, 300);
+    
+    channelPane = new CAUGuiLayeredPane(theGui, &where, graChannelPaneBackground);
+	paneBackground->addCtrl(channelPane);
+	
+    for (int channel=0; channel<kNumChannels; channel++) {
+        
+        channelPane->addBackground(graChannelPaneBackground, channel);
+                
+        // MSB/LSB
+        where.set(48, 38, 105, 15);
+        CAUGuiDisplay * bankMsb = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_BankMSB, channel), &where, kCAUGui_res_1, NULL, NULL, graMsbLsbBackground);
+        //bankMsb->generatePopUpMenue();
+        bankMsb->text_offset_y = 4;
+        channelPane->addCtrl(bankMsb, channel);
+        where.offset(0, 24);
+        CAUGuiDisplay * bankLsb = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_BankLSB, channel), &where, kCAUGui_res_1, NULL, NULL, graMsbLsbBackground);
+        //bankLsb->generatePopUpMenue();
+        bankLsb->text_offset_y = 4;
+        channelPane->addCtrl(bankLsb, channel);
+    }
+    
+    channelPane->setLayer(0);
+    
 	/*
 	// Create the two knobs
 	
@@ -237,3 +320,9 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 	
 	return noErr;
 }
+                                                                 
+void EverySynthCarbonUI::activateChannelPane(int number)
+{
+    channelPane->setLayer(number);
+}
+
