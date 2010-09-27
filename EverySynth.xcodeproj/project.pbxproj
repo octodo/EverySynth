@@ -17,6 +17,21 @@
 		1B14DA8B124CC0BB00E28FC6 /* EverySynth.component in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D01CCD20486CAD60068D4B7 /* EverySynth.component */; };
 		1B14DAE6124CC8FE00E28FC6 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B14DAE4124CC8FE00E28FC6 /* CAHostTimeBase.cpp */; };
 		1B14DAE7124CC8FE00E28FC6 /* CAHostTimeBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B14DAE5124CC8FE00E28FC6 /* CAHostTimeBase.h */; };
+		1B1CB5EB124F5D74002E4925 /* mixer_volume_handle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB5EA124F5D74002E4925 /* mixer_volume_handle.png */; };
+		1B1CB6EA124F95FB002E4925 /* mixer_value_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB6E9124F95FB002E4925 /* mixer_value_background.png */; };
+		1B1CB799124FA9F0002E4925 /* CAUGuiList.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1CB797124FA9F0002E4925 /* CAUGuiList.h */; };
+		1B1CB79A124FA9F0002E4925 /* CAUGuiList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CB798124FA9F0002E4925 /* CAUGuiList.cpp */; };
+		1B1CB845124FBCB5002E4925 /* device_list_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB844124FBCB5002E4925 /* device_list_background.png */; };
+		1B1CB862124FBE0A002E4925 /* msb_lsb_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB861124FBE0A002E4925 /* msb_lsb_background.png */; };
+		1B1CB868124FBFE8002E4925 /* channel_pane_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB867124FBFE8002E4925 /* channel_pane_background.png */; };
+		1B1CB885124FD542002E4925 /* channel_mute.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB884124FD542002E4925 /* channel_mute.png */; };
+		1B1CB89E124FD691002E4925 /* channel_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB89B124FD691002E4925 /* channel_select.png */; };
+		1B1CB89F124FD691002E4925 /* device_type.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB89C124FD691002E4925 /* device_type.png */; };
+		1B1CB8A0124FD691002E4925 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1CB89D124FD691002E4925 /* page.png */; };
+		1B1CB8BF124FD9EF002E4925 /* CAUGuiLabeledButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1CB8BD124FD9EF002E4925 /* CAUGuiLabeledButton.h */; };
+		1B1CB8C0124FD9EF002E4925 /* CAUGuiLabeledButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CB8BE124FD9EF002E4925 /* CAUGuiLabeledButton.cpp */; };
+		1B1CBA1D1250017F002E4925 /* CAUGuiRadioArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1CBA1B1250017F002E4925 /* CAUGuiRadioArray.h */; };
+		1B1CBA1E1250017F002E4925 /* CAUGuiRadioArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CBA1C1250017F002E4925 /* CAUGuiRadioArray.cpp */; };
 		1BE198E6124E26F3006DE1BF /* CAUGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CD124E26F3006DE1BF /* CAUGui.cpp */; };
 		1BE198E7124E26F3006DE1BF /* CAUGui.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198CE124E26F3006DE1BF /* CAUGui.h */; };
 		1BE198E8124E26F3006DE1BF /* CAUGuiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */; };
@@ -43,15 +58,7 @@
 		1BE198FD124E26F3006DE1BF /* CAUGuiTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198E4124E26F3006DE1BF /* CAUGuiTools.cpp */; };
 		1BE198FE124E26F3006DE1BF /* CAUGuiTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198E5124E26F3006DE1BF /* CAUGuiTools.h */; };
 		1BE19952124E64BD006DE1BF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE19948124E64BD006DE1BF /* background.png */; };
-		1BE19953124E64BD006DE1BF /* channel_mute_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE19949124E64BD006DE1BF /* channel_mute_active.png */; };
-		1BE19954124E64BD006DE1BF /* channel_mute_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE1994A124E64BD006DE1BF /* channel_mute_inactive.png */; };
-		1BE19955124E64BD006DE1BF /* channel_select_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE1994B124E64BD006DE1BF /* channel_select_active.png */; };
-		1BE19956124E64BD006DE1BF /* channel_select_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE1994C124E64BD006DE1BF /* channel_select_inactive.png */; };
-		1BE19957124E64BD006DE1BF /* device_type_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE1994D124E64BD006DE1BF /* device_type_active.png */; };
-		1BE19958124E64BD006DE1BF /* device_type_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE1994E124E64BD006DE1BF /* device_type_inactive.png */; };
 		1BE19959124E64BD006DE1BF /* mixer_volume_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE1994F124E64BD006DE1BF /* mixer_volume_background.png */; };
-		1BE1995A124E64BD006DE1BF /* page_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE19950124E64BD006DE1BF /* page_active.png */; };
-		1BE1995B124E64BD006DE1BF /* page_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE19951124E64BD006DE1BF /* page_inactive.png */; };
 		1BE1998E124E69A6006DE1BF /* EverySynthCarbonUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE1998C124E69A6006DE1BF /* EverySynthCarbonUI.h */; };
 		1BE1998F124E69A6006DE1BF /* EverySynthCarbonUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE1998D124E69A6006DE1BF /* EverySynthCarbonUI.cpp */; };
 		1BE199A0124E6C4D006DE1BF /* AUCarbonViewBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE19997124E6C4D006DE1BF /* AUCarbonViewBase.cpp */; };
@@ -138,6 +145,21 @@
 		1B14DAE5124CC8FE00E28FC6 /* CAHostTimeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAHostTimeBase.h; path = Extras/CoreAudio/PublicUtility/CAHostTimeBase.h; sourceTree = DEVELOPER_DIR; };
 		1B14DBC4124D16BD00E28FC6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B14DBC5124D16BD00E28FC6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		1B1CB5EA124F5D74002E4925 /* mixer_volume_handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mixer_volume_handle.png; sourceTree = "<group>"; };
+		1B1CB6E9124F95FB002E4925 /* mixer_value_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mixer_value_background.png; sourceTree = "<group>"; };
+		1B1CB797124FA9F0002E4925 /* CAUGuiList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiList.h; sourceTree = "<group>"; };
+		1B1CB798124FA9F0002E4925 /* CAUGuiList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiList.cpp; sourceTree = "<group>"; };
+		1B1CB844124FBCB5002E4925 /* device_list_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_list_background.png; sourceTree = "<group>"; };
+		1B1CB861124FBE0A002E4925 /* msb_lsb_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msb_lsb_background.png; sourceTree = "<group>"; };
+		1B1CB867124FBFE8002E4925 /* channel_pane_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_pane_background.png; sourceTree = "<group>"; };
+		1B1CB884124FD542002E4925 /* channel_mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_mute.png; sourceTree = "<group>"; };
+		1B1CB89B124FD691002E4925 /* channel_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_select.png; sourceTree = "<group>"; };
+		1B1CB89C124FD691002E4925 /* device_type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_type.png; sourceTree = "<group>"; };
+		1B1CB89D124FD691002E4925 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		1B1CB8BD124FD9EF002E4925 /* CAUGuiLabeledButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiLabeledButton.h; sourceTree = "<group>"; };
+		1B1CB8BE124FD9EF002E4925 /* CAUGuiLabeledButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiLabeledButton.cpp; sourceTree = "<group>"; };
+		1B1CBA1B1250017F002E4925 /* CAUGuiRadioArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiRadioArray.h; sourceTree = "<group>"; };
+		1B1CBA1C1250017F002E4925 /* CAUGuiRadioArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiRadioArray.cpp; sourceTree = "<group>"; };
 		1BE198CD124E26F3006DE1BF /* CAUGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGui.cpp; sourceTree = "<group>"; };
 		1BE198CE124E26F3006DE1BF /* CAUGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGui.h; sourceTree = "<group>"; };
 		1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiButton.cpp; sourceTree = "<group>"; };
@@ -164,15 +186,7 @@
 		1BE198E4124E26F3006DE1BF /* CAUGuiTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiTools.cpp; sourceTree = "<group>"; };
 		1BE198E5124E26F3006DE1BF /* CAUGuiTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiTools.h; sourceTree = "<group>"; };
 		1BE19948124E64BD006DE1BF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		1BE19949124E64BD006DE1BF /* channel_mute_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_mute_active.png; sourceTree = "<group>"; };
-		1BE1994A124E64BD006DE1BF /* channel_mute_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_mute_inactive.png; sourceTree = "<group>"; };
-		1BE1994B124E64BD006DE1BF /* channel_select_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_select_active.png; sourceTree = "<group>"; };
-		1BE1994C124E64BD006DE1BF /* channel_select_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel_select_inactive.png; sourceTree = "<group>"; };
-		1BE1994D124E64BD006DE1BF /* device_type_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_type_active.png; sourceTree = "<group>"; };
-		1BE1994E124E64BD006DE1BF /* device_type_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device_type_inactive.png; sourceTree = "<group>"; };
 		1BE1994F124E64BD006DE1BF /* mixer_volume_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mixer_volume_background.png; sourceTree = "<group>"; };
-		1BE19950124E64BD006DE1BF /* page_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_active.png; sourceTree = "<group>"; };
-		1BE19951124E64BD006DE1BF /* page_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_inactive.png; sourceTree = "<group>"; };
 		1BE1998C124E69A6006DE1BF /* EverySynthCarbonUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverySynthCarbonUI.h; sourceTree = "<group>"; };
 		1BE1998D124E69A6006DE1BF /* EverySynthCarbonUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EverySynthCarbonUI.cpp; sourceTree = "<group>"; };
 		1BE19997124E6C4D006DE1BF /* AUCarbonViewBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUCarbonViewBase.cpp; path = Extras/CoreAudio/AudioUnits/AUPublic/AUCarbonViewBase/AUCarbonViewBase.cpp; sourceTree = DEVELOPER_DIR; };
@@ -256,7 +270,6 @@
 			children = (
 				1B14DBC4124D16BD00E28FC6 /* LICENSE */,
 				1B14DBC5124D16BD00E28FC6 /* README */,
-				1BE19947124E64BD006DE1BF /* gfx */,
 				08FB77ADFE841716C02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -281,6 +294,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BE19947124E64BD006DE1BF /* gfx */,
 				8D01CCD10486CAD60068D4B7 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
@@ -292,6 +306,7 @@
 			children = (
 				1BE198CC124E26F3006DE1BF /* CAUGui */,
 				1B14D87D124CBE2F00E28FC6 /* EverySynth_Prefix.pch */,
+				1B1CB794124FA9C5002E4925 /* CarbonUI */,
 				8BA05A56072072A900365D66 /* AU Source */,
 				8BA05AEB0720742700365D66 /* PublicUtility */,
 				8BA05A7D072073D200365D66 /* AUPublic */,
@@ -305,6 +320,21 @@
 				8D01CCD20486CAD60068D4B7 /* EverySynth.component */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1B1CB794124FA9C5002E4925 /* CarbonUI */ = {
+			isa = PBXGroup;
+			children = (
+				1BE1998D124E69A6006DE1BF /* EverySynthCarbonUI.cpp */,
+				1BE1998C124E69A6006DE1BF /* EverySynthCarbonUI.h */,
+				1B1CB797124FA9F0002E4925 /* CAUGuiList.h */,
+				1B1CB798124FA9F0002E4925 /* CAUGuiList.cpp */,
+				1B1CB8BD124FD9EF002E4925 /* CAUGuiLabeledButton.h */,
+				1B1CB8BE124FD9EF002E4925 /* CAUGuiLabeledButton.cpp */,
+				1B1CBA1B1250017F002E4925 /* CAUGuiRadioArray.h */,
+				1B1CBA1C1250017F002E4925 /* CAUGuiRadioArray.cpp */,
+			);
+			name = CarbonUI;
 			sourceTree = "<group>";
 		};
 		1BE198CC124E26F3006DE1BF /* CAUGui */ = {
@@ -342,16 +372,17 @@
 		1BE19947124E64BD006DE1BF /* gfx */ = {
 			isa = PBXGroup;
 			children = (
+				1B1CB89B124FD691002E4925 /* channel_select.png */,
+				1B1CB89C124FD691002E4925 /* device_type.png */,
+				1B1CB89D124FD691002E4925 /* page.png */,
+				1B1CB884124FD542002E4925 /* channel_mute.png */,
+				1B1CB867124FBFE8002E4925 /* channel_pane_background.png */,
+				1B1CB861124FBE0A002E4925 /* msb_lsb_background.png */,
 				1BE19948124E64BD006DE1BF /* background.png */,
-				1BE19949124E64BD006DE1BF /* channel_mute_active.png */,
-				1BE1994A124E64BD006DE1BF /* channel_mute_inactive.png */,
-				1BE1994B124E64BD006DE1BF /* channel_select_active.png */,
-				1BE1994C124E64BD006DE1BF /* channel_select_inactive.png */,
-				1BE1994D124E64BD006DE1BF /* device_type_active.png */,
-				1BE1994E124E64BD006DE1BF /* device_type_inactive.png */,
+				1B1CB844124FBCB5002E4925 /* device_list_background.png */,
+				1B1CB6E9124F95FB002E4925 /* mixer_value_background.png */,
 				1BE1994F124E64BD006DE1BF /* mixer_volume_background.png */,
-				1BE19950124E64BD006DE1BF /* page_active.png */,
-				1BE19951124E64BD006DE1BF /* page_inactive.png */,
+				1B1CB5EA124F5D74002E4925 /* mixer_volume_handle.png */,
 			);
 			path = gfx;
 			sourceTree = "<group>";
@@ -383,8 +414,6 @@
 		8BA05A56072072A900365D66 /* AU Source */ = {
 			isa = PBXGroup;
 			children = (
-				1BE1998C124E69A6006DE1BF /* EverySynthCarbonUI.h */,
-				1BE1998D124E69A6006DE1BF /* EverySynthCarbonUI.cpp */,
 				1B14D87E124CBE2F00E28FC6 /* EverySynth.cpp */,
 				1B14D87F124CBE2F00E28FC6 /* EverySynth.exp */,
 				1B14D880124CBE2F00E28FC6 /* EverySynth.h */,
@@ -533,6 +562,9 @@
 				1BE199A6124E6C4D006DE1BF /* AUControlGroup.h in Headers */,
 				1BE199A8124E6C4D006DE1BF /* CarbonEventHandler.h in Headers */,
 				1BE199B1124E6D05006DE1BF /* AUViewLocalizedStringKeys.h in Headers */,
+				1B1CB799124FA9F0002E4925 /* CAUGuiList.h in Headers */,
+				1B1CB8BF124FD9EF002E4925 /* CAUGuiLabeledButton.h in Headers */,
+				1B1CBA1D1250017F002E4925 /* CAUGuiRadioArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,15 +616,16 @@
 			files = (
 				8D01CCCA0486CAD60068D4B7 /* InfoPlist.strings in Resources */,
 				1BE19952124E64BD006DE1BF /* background.png in Resources */,
-				1BE19953124E64BD006DE1BF /* channel_mute_active.png in Resources */,
-				1BE19954124E64BD006DE1BF /* channel_mute_inactive.png in Resources */,
-				1BE19955124E64BD006DE1BF /* channel_select_active.png in Resources */,
-				1BE19956124E64BD006DE1BF /* channel_select_inactive.png in Resources */,
-				1BE19957124E64BD006DE1BF /* device_type_active.png in Resources */,
-				1BE19958124E64BD006DE1BF /* device_type_inactive.png in Resources */,
 				1BE19959124E64BD006DE1BF /* mixer_volume_background.png in Resources */,
-				1BE1995A124E64BD006DE1BF /* page_active.png in Resources */,
-				1BE1995B124E64BD006DE1BF /* page_inactive.png in Resources */,
+				1B1CB5EB124F5D74002E4925 /* mixer_volume_handle.png in Resources */,
+				1B1CB6EA124F95FB002E4925 /* mixer_value_background.png in Resources */,
+				1B1CB845124FBCB5002E4925 /* device_list_background.png in Resources */,
+				1B1CB862124FBE0A002E4925 /* msb_lsb_background.png in Resources */,
+				1B1CB868124FBFE8002E4925 /* channel_pane_background.png in Resources */,
+				1B1CB885124FD542002E4925 /* channel_mute.png in Resources */,
+				1B1CB89E124FD691002E4925 /* channel_select.png in Resources */,
+				1B1CB89F124FD691002E4925 /* device_type.png in Resources */,
+				1B1CB8A0124FD691002E4925 /* page.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +685,9 @@
 				1BE199A4124E6C4D006DE1BF /* AUCarbonViewDispatch.cpp in Sources */,
 				1BE199A5124E6C4D006DE1BF /* AUControlGroup.cpp in Sources */,
 				1BE199A7124E6C4D006DE1BF /* CarbonEventHandler.cpp in Sources */,
+				1B1CB79A124FA9F0002E4925 /* CAUGuiList.cpp in Sources */,
+				1B1CB8C0124FD9EF002E4925 /* CAUGuiLabeledButton.cpp in Sources */,
+				1B1CBA1E1250017F002E4925 /* CAUGuiRadioArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
