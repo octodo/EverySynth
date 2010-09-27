@@ -212,6 +212,8 @@ void CAUGuiSlider::mouseTrack(Point *P, bool with_option, bool with_shift)
 	if ( val < 0 ) val = 0;
 	SetControl32BitValue ( carbonControl, (UInt32) val );
 	
+    Draw1Control(getCarbonControl());
+    
 	//printf ( "Slider says: %d\n", val );
 }
 

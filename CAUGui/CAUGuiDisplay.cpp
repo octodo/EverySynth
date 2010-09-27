@@ -30,6 +30,8 @@ CAUGuiDisplay::CAUGuiDisplay (	CAUGuiMan*			theChief,
 	userData = NULL;
 	
 	textalign = CAUGUI_DEFAULT_FONT_ALIGN; 
+    
+    buffer_size = 32;
 	
 	//printf ("ctor CAUGuiDisplay\n");
 	
@@ -72,7 +74,12 @@ CAUGuiDisplay::CAUGuiDisplay (	CAUGuiMan*			theChief,
 		theUserData = this;
 	
 	textalign = CAUGUI_DEFAULT_FONT_ALIGN;
-		
+    
+    text_offset_x = 0;
+    text_offset_y = 0;
+    
+    buffer_size = 32;
+    
 	//printf ("ctor CAUGuiDisplay\n");
 	
 	setType ( kCAUGui_Display );
@@ -191,8 +198,9 @@ void CAUGuiDisplay::mouseDown(Point *P, bool, bool)
 
 		}
 	}
+    
+    Draw1Control(carbonControl);
 
-	
 }
 
 void CAUGuiDisplay::mouseTrack(Point *P, bool with_option, bool with_shift)
@@ -264,6 +272,8 @@ void CAUGuiDisplay::mouseTrack(Point *P, bool with_option, bool with_shift)
 		
 		}
 	}
+    
+    Draw1Control(carbonControl);
 
 }
 
@@ -321,7 +331,7 @@ void CAUGuiDisplay::draw(CGContextRef context, UInt32 portHeight )
 	
 	CGImageRef theBack = NULL;
 	CGImageRef theDisplay = NULL;
-	char text[32];
+	char text[buffer_size];
 	text[0] = 0;
 	CGRect bounds;
 	
@@ -373,7 +383,8 @@ void CAUGuiDisplay::draw(CGContextRef context, UInt32 portHeight )
 				case kAudioUnitParameterUnit_Indexed:
 					if ( myParam.HasNamedParams() )
 					{
-						CFStringGetCString(myParam.GetParamName(value), text, 24, 0);
+                        //CFStringGetCString(myParam.GetParamName(value), text, 24, 0);
+                        CFStringGetBytes(myParam.GetParamName(value), CFRangeMake(0, buffer_size-1), 0, 0x3F, false, (UInt8*)text, buffer_size, NULL);
 					}
 					else
 					{
@@ -399,6 +410,7 @@ void CAUGuiDisplay::draw(CGContextRef context, UInt32 portHeight )
 		
 		CGContextSelectFont ( context, font_name, font_size, kCGEncodingMacRoman );
 		CGContextSetRGBFillColor( context, col_red, col_green, col_blue, col_alpha );
+		CGContextSetRGBStrokeColor( context, col_red, col_green, col_blue, col_alpha );
 		
 		
 		if ( textalign != 0 )
@@ -420,7 +432,7 @@ void CAUGuiDisplay::draw(CGContextRef context, UInt32 portHeight )
 			}
 		}
 		CGContextSetTextDrawingMode ( context, kCGTextFill );
-		CGContextShowTextAtPoint(context, bounds.origin.x, bounds.origin.y, text, strlen (text) );
+		CGContextShowTextAtPoint(context, bounds.origin.x + text_offset_x, bounds.origin.y + text_offset_y, text, strlen (text) );
 	
 	}
 	

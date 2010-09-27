@@ -162,7 +162,12 @@ private:
 	void*					userData;
 	
 	MenuRef 				popUp;
-	
+
+public:
+    
+    int                     text_offset_x;
+    int                     text_offset_y;
+    int                     buffer_size;
 };
 
 

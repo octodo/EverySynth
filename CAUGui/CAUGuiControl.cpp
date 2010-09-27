@@ -107,7 +107,7 @@ void CAUGuiCtrl::setDefaults()
 	
 	lastUpdatedValue = 0;
 	
-	tolerance = 1;
+	tolerance = 0;
 	
 	becameVisible = false;
 	
@@ -313,7 +313,7 @@ bool CAUGuiCtrl::mustUpdate ()
 	
 	}
 	
-	//printf ( "CAUGuiCtrl::mustUpdate () draw prevented!\n" );
+	printf ( "CAUGuiCtrl::mustUpdate () draw prevented!\n" );
 	
 	return false;
 

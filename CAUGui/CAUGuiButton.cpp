@@ -180,6 +180,8 @@ void CAUGuiButton::mouseDown(Point *P, bool with_option, bool with_shift)
 		userProcedure ( value, this, userData );
 	
 	}
+    
+    Draw1Control(getCarbonControl());
 	
 }
 
@@ -216,6 +218,8 @@ void CAUGuiButton::mouseUp(Point *P, bool with_option, bool with_shift)
 			Draw1Control ( carbonControl );
 			break;
 	}
+    
+    Draw1Control(getCarbonControl());
 }
 
 void CAUGuiButton::setUserProcedure ( buttonUserProcedure theProc, void* theUserData )

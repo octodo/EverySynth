@@ -12,20 +12,20 @@
 
 #define AU_BUNDLE_IDENTIFIER "net.pmlk.audiounits.EverySynth"
 
-#define CAUGUI_FONT "Monaco"
+#define CAUGUI_FONT "Futura"
 
 #define CAUGUI_FONT_SIZE 11.0
 
-#define	CAUGUI_FONT_RED 0.0
-#define	CAUGUI_FONT_GREEN 0.0
-#define	CAUGUI_FONT_BLUE 0.0
+#define	CAUGUI_FONT_RED 0.9
+#define	CAUGUI_FONT_GREEN 0.86
+#define	CAUGUI_FONT_BLUE 0.76
 #define	CAUGUI_FONT_ALPHA 1.0
 
 #define CAUGUI_DEFAULT_FONT_ALIGN 1 // center 
 
-#define AUTO_POP_UP_MENUES 1
+#define AUTO_POP_UP_MENUES 0
 
-#define CAUGUI_PANE_MAX_LAYERS 4
+#define CAUGUI_PANE_MAX_LAYERS 16
 
 #ifndef PI
 #define PI (3.1415926535897932384626433832795)

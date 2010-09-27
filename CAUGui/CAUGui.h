@@ -409,11 +409,11 @@ public:
 	
 	//! set fontface, i.e. "Monaco"
 	virtual void				setFont ( char *theFont ) { strcpy ( font_name, theFont ); }
-	
+
+    virtual void				setFontSize ( float theFontSize ) { font_size = theFontSize; }
+
 	//! 0 = left, 1 = center, 2 = right
 	virtual void 				setTextAlign ( int a ) { textalign = a; }
-	
-	
 
 	
 	
