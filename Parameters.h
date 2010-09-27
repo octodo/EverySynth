@@ -90,3 +90,14 @@ enum {
 	midiControlType_PatchDump,
 	midiControlType_LastEntry
 };
+
+
+/***************** properties **********************************/
+
+static const int kPropertySize_MidiDeviceType = sizeof(char[32]);
+
+enum {
+    kProperty_MidiDeviceType,
+
+    kNumberOfProperties
+};

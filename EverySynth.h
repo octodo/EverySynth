@@ -62,7 +62,14 @@ public:
 											AudioUnitElement 	inElement,
 											void *			outData);
     
-	virtual ComponentResult		GetParameterValueStrings (AudioUnitScope          inScope,
+
+    virtual OSStatus			SetProperty(AudioUnitPropertyID 			inID,
+                                            AudioUnitScope 					inScope,
+                                            AudioUnitElement 				inElement,
+                                            const void *					inData,
+                                            UInt32 							inDataSize);
+
+    virtual ComponentResult		GetParameterValueStrings (AudioUnitScope          inScope,
                                                           AudioUnitParameterID    inParameterID,
                                                           CFArrayRef              *outStrings);
     
@@ -124,6 +131,8 @@ private:
 	
 	bool hardwareDidInit;
 	bool deviceListDidInit;
+    
+    char * property_MidiDeviceType;
 };
 
 

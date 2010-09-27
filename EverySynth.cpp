@@ -31,8 +31,9 @@ EverySynth::EverySynth(AudioUnit component)
 {
 	DEBUG_OUT("EverySynth::EverySynth")
     
+    property_MidiDeviceType = new char[32];
+    
 	midiDevices = NULL;
-	
 	hardwareDidInit = false;
     
 #if AU_DEBUG_DISPATCHER
@@ -301,6 +302,14 @@ ComponentResult EverySynth::GetPropertyInfo (AudioUnitPropertyID inID,
                 return noErr;
         }
     }
+    else if (inScope == kAudioUnitScope_Global) {
+        switch (inID) {
+            case kProperty_MidiDeviceType:
+                outWritable = true;
+                outDataSize = kPropertySize_MidiDeviceType;
+                return noErr;
+        }
+    }
     
     return MusicDeviceBase::GetPropertyInfo(inID, inScope, inElement, outDataSize, outWritable);
 }
@@ -319,8 +328,34 @@ ComponentResult EverySynth::GetProperty(AudioUnitPropertyID inID,
                 return noErr;
         }
     }
-
+    else if (inScope == kAudioUnitScope_Global) {
+        switch (inID) {
+            case kProperty_MidiDeviceType:
+                strncpy((char*)outData, property_MidiDeviceType, kPropertySize_MidiDeviceType);
+                return noErr;
+        }
+    }
+    
 	return MusicDeviceBase::GetProperty (inID, inScope, inElement, outData);
+}
+
+OSStatus EverySynth::SetProperty(AudioUnitPropertyID inID,
+                                 AudioUnitScope inScope,
+                                 AudioUnitElement inElement,
+                                 const void * inData,
+                                 UInt32 inDataSize)
+{
+    DEBUG_OUT("EverySynth::GetProperty")
+
+    if (inScope == kAudioUnitScope_Global) {
+        switch (inID) {
+            case kProperty_MidiDeviceType:
+                strncpy(property_MidiDeviceType, (const char*)inData, inDataSize);
+                return noErr;
+        }
+    }
+    
+	return MusicDeviceBase::SetProperty (inID, inScope, inElement, inData, inDataSize);    
 }
 
 void EverySynth::GetUIComponentDescs (ComponentDescription* inDescArray)
