@@ -22,6 +22,19 @@ CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
     itemPadding = 5;
 }
 
+CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
+                       UInt32 theRange,
+                       eRect * theWhere,
+                       CAUGuiGraphic * theBackground,
+                       int col)
+:	CAUGuiCtrl (theChief, theWhere, theRange)
+{
+    background = theBackground;
+    itemNames = NULL;
+    numColumns = col;
+    itemPadding = 5;
+}
+
 void CAUGuiList::mouseDown(Point *P, bool, bool)
 {
 	ControlRef carbonControl = getCarbonControl();
@@ -42,6 +55,10 @@ void CAUGuiList::mouseDown(Point *P, bool, bool)
     SetControl32BitValue(carbonControl, item);
 
 	Draw1Control(carbonControl);
+    
+    if (userProc != NULL) {
+        userProc(item, this, userData);
+    }
 }
 
 void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
@@ -59,11 +76,15 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
     if ( background != NULL )
 		CGContextDrawImage( context, bounds, background->getImage() );
 
-    CAAUParameter myParam = getAUVP();
+    CAAUParameter myParam;
     
-    // Only indexed parameters!
-    if (!myParam.IsIndexedParam())
-        return;
+    if (isAUVPattached()) {
+        myParam = getAUVP();
+    
+        // Only indexed parameters!
+        if (!myParam.IsIndexedParam())
+            return;
+    }
 
     CGContextSelectFont(context, font_name, font_size, kCGEncodingMacRoman);
     
@@ -87,7 +108,7 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
 
     CGContextSetTextDrawingMode ( context, kCGTextFill );
     
-    for (int i=0; (i < num_items_per_page) && (current_page*num_items_per_page+i < myParam.GetNumIndexedParams()); i++) {
+    for (int i=0; (i < num_items_per_page) && (current_page*num_items_per_page+i < getRange()); i++) {
         char text[32];
         int nItem = current_page * num_items_per_page + i;
         
@@ -97,10 +118,10 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
         itemRect.size.width = item_width;
         itemRect.size.height = item_height;
         
-        if (itemNames != NULL) {
-            CFStringGetBytes(itemNames[nItem], CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
+        if (itemNames != NULL && CFArrayGetCount(itemNames) > nItem) {
+            CFStringGetBytes((CFStringRef)CFArrayGetValueAtIndex(itemNames, nItem), CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
         }
-        else if (myParam.HasNamedParams()) {
+        else if (isAUVPattached() && myParam.HasNamedParams()) {
             CFStringGetBytes(myParam.GetParamName(nItem), CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
         }
         else {

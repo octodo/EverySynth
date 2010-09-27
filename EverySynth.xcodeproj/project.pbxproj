@@ -6,6 +6,20 @@
 	objectVersion = 44;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		1B6B7DD91250BFE000BB151F /* Devices */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1B6B7DDD1250BFFE00BB151F /* Build configuration list for PBXAggregateTarget "Devices" */;
+			buildPhases = (
+				1B6B7DD81250BFE000BB151F /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = Devices;
+			productName = Devices;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1B14D884124CBE2F00E28FC6 /* EverySynth_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 1B14D87D124CBE2F00E28FC6 /* EverySynth_Prefix.pch */; };
 		1B14D885124CBE2F00E28FC6 /* EverySynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B14D87E124CBE2F00E28FC6 /* EverySynth.cpp */; };
@@ -32,6 +46,11 @@
 		1B1CB8C0124FD9EF002E4925 /* CAUGuiLabeledButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CB8BE124FD9EF002E4925 /* CAUGuiLabeledButton.cpp */; };
 		1B1CBA1D1250017F002E4925 /* CAUGuiRadioArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1CBA1B1250017F002E4925 /* CAUGuiRadioArray.h */; };
 		1B1CBA1E1250017F002E4925 /* CAUGuiRadioArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1CBA1C1250017F002E4925 /* CAUGuiRadioArray.cpp */; };
+		1B6B7BD31250998300BB151F /* DeviceDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6B7BD11250998300BB151F /* DeviceDB.h */; };
+		1B6B7BD41250998300BB151F /* DeviceDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B7BD21250998300BB151F /* DeviceDB.cpp */; };
+		1B6B7D1A1250B63700BB151F /* bank_list_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B7D181250B63700BB151F /* bank_list_background.png */; };
+		1B6B7D1B1250B63700BB151F /* patch_list_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B7D191250B63700BB151F /* patch_list_background.png */; };
+		1B6B7E221250C1A100BB151F /* Roland Fantom-X.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6B7E201250C19600BB151F /* Roland Fantom-X.plist */; };
 		1BE198E6124E26F3006DE1BF /* CAUGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CD124E26F3006DE1BF /* CAUGui.cpp */; };
 		1BE198E7124E26F3006DE1BF /* CAUGui.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198CE124E26F3006DE1BF /* CAUGui.h */; };
 		1BE198E8124E26F3006DE1BF /* CAUGuiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */; };
@@ -118,6 +137,16 @@
 		F7E148B80AB62F9E0089813D /* CAAUMIDIMapManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F7E148B40AB62F9E0089813D /* CAAUMIDIMapManager.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1B6B7DEB1250C08500BB151F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B6B7DD91250BFE000BB151F;
+			remoteInfo = Devices;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		1B14DAA6124CC0C100E28FC6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -126,6 +155,16 @@
 			dstSubfolderSpec = 0;
 			files = (
 				1B14DA8B124CC0BB00E28FC6 /* EverySynth.component in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6B7DD81250BFE000BB151F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = EverySynth.component/Contents/Resources/Devices;
+			dstSubfolderSpec = 16;
+			files = (
+				1B6B7E221250C1A100BB151F /* Roland Fantom-X.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +199,11 @@
 		1B1CB8BE124FD9EF002E4925 /* CAUGuiLabeledButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiLabeledButton.cpp; sourceTree = "<group>"; };
 		1B1CBA1B1250017F002E4925 /* CAUGuiRadioArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGuiRadioArray.h; sourceTree = "<group>"; };
 		1B1CBA1C1250017F002E4925 /* CAUGuiRadioArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiRadioArray.cpp; sourceTree = "<group>"; };
+		1B6B7BD11250998300BB151F /* DeviceDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDB.h; sourceTree = "<group>"; };
+		1B6B7BD21250998300BB151F /* DeviceDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeviceDB.cpp; sourceTree = "<group>"; };
+		1B6B7D181250B63700BB151F /* bank_list_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_list_background.png; sourceTree = "<group>"; };
+		1B6B7D191250B63700BB151F /* patch_list_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patch_list_background.png; sourceTree = "<group>"; };
+		1B6B7E201250C19600BB151F /* Roland Fantom-X.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roland Fantom-X.plist"; sourceTree = "<group>"; };
 		1BE198CD124E26F3006DE1BF /* CAUGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGui.cpp; sourceTree = "<group>"; };
 		1BE198CE124E26F3006DE1BF /* CAUGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGui.h; sourceTree = "<group>"; };
 		1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiButton.cpp; sourceTree = "<group>"; };
@@ -294,6 +338,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B6B7CA51250A2D700BB151F /* Devices */,
 				1BE19947124E64BD006DE1BF /* gfx */,
 				8D01CCD10486CAD60068D4B7 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
@@ -304,7 +349,8 @@
 		08FB77ADFE841716C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1BE198CC124E26F3006DE1BF /* CAUGui */,
+				1B6B7BD11250998300BB151F /* DeviceDB.h */,
+				1B6B7BD21250998300BB151F /* DeviceDB.cpp */,
 				1B14D87D124CBE2F00E28FC6 /* EverySynth_Prefix.pch */,
 				1B1CB794124FA9C5002E4925 /* CarbonUI */,
 				8BA05A56072072A900365D66 /* AU Source */,
@@ -325,6 +371,7 @@
 		1B1CB794124FA9C5002E4925 /* CarbonUI */ = {
 			isa = PBXGroup;
 			children = (
+				1BE198CC124E26F3006DE1BF /* CAUGui */,
 				1BE1998D124E69A6006DE1BF /* EverySynthCarbonUI.cpp */,
 				1BE1998C124E69A6006DE1BF /* EverySynthCarbonUI.h */,
 				1B1CB797124FA9F0002E4925 /* CAUGuiList.h */,
@@ -335,6 +382,14 @@
 				1B1CBA1C1250017F002E4925 /* CAUGuiRadioArray.cpp */,
 			);
 			name = CarbonUI;
+			sourceTree = "<group>";
+		};
+		1B6B7CA51250A2D700BB151F /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				1B6B7E201250C19600BB151F /* Roland Fantom-X.plist */,
+			);
+			path = Devices;
 			sourceTree = "<group>";
 		};
 		1BE198CC124E26F3006DE1BF /* CAUGui */ = {
@@ -372,6 +427,8 @@
 		1BE19947124E64BD006DE1BF /* gfx */ = {
 			isa = PBXGroup;
 			children = (
+				1B6B7D181250B63700BB151F /* bank_list_background.png */,
+				1B6B7D191250B63700BB151F /* patch_list_background.png */,
 				1B1CB89B124FD691002E4925 /* channel_select.png */,
 				1B1CB89C124FD691002E4925 /* device_type.png */,
 				1B1CB89D124FD691002E4925 /* page.png */,
@@ -565,6 +622,7 @@
 				1B1CB799124FA9F0002E4925 /* CAUGuiList.h in Headers */,
 				1B1CB8BF124FD9EF002E4925 /* CAUGuiLabeledButton.h in Headers */,
 				1B1CBA1D1250017F002E4925 /* CAUGuiRadioArray.h in Headers */,
+				1B6B7BD31250998300BB151F /* DeviceDB.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +643,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1B6B7DEC1250C08500BB151F /* PBXTargetDependency */,
 			);
 			name = EverySynth;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -604,6 +663,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				1B6B7DD91250BFE000BB151F /* Devices */,
 				8D01CCC60486CAD60068D4B7 /* EverySynth */,
 			);
 		};
@@ -626,6 +686,8 @@
 				1B1CB89E124FD691002E4925 /* channel_select.png in Resources */,
 				1B1CB89F124FD691002E4925 /* device_type.png in Resources */,
 				1B1CB8A0124FD691002E4925 /* page.png in Resources */,
+				1B6B7D1A1250B63700BB151F /* bank_list_background.png in Resources */,
+				1B6B7D1B1250B63700BB151F /* patch_list_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,10 +750,19 @@
 				1B1CB79A124FA9F0002E4925 /* CAUGuiList.cpp in Sources */,
 				1B1CB8C0124FD9EF002E4925 /* CAUGuiLabeledButton.cpp in Sources */,
 				1B1CBA1E1250017F002E4925 /* CAUGuiRadioArray.cpp in Sources */,
+				1B6B7BD41250998300BB151F /* DeviceDB.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B6B7DEC1250C08500BB151F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B6B7DD91250BFE000BB151F /* Devices */;
+			targetProxy = 1B6B7DEB1250C08500BB151F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
@@ -747,6 +818,34 @@
 				WRAPPER_EXTENSION = component;
 			};
 			name = "Debug with AUDebugDispatcher";
+		};
+		1B6B7DDA1250BFE000BB151F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Devices;
+			};
+			name = Debug;
+		};
+		1B6B7DDB1250BFE000BB151F /* Debug with AUDebugDispatcher */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Devices;
+			};
+			name = "Debug with AUDebugDispatcher";
+		};
+		1B6B7DDC1250BFE000BB151F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Devices;
+				ZERO_LINK = NO;
+			};
+			name = Release;
 		};
 		3E4BA244089833B7007656EC /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -828,6 +927,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B6B7DDD1250BFFE00BB151F /* Build configuration list for PBXAggregateTarget "Devices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6B7DDA1250BFE000BB151F /* Debug */,
+				1B6B7DDB1250BFE000BB151F /* Debug with AUDebugDispatcher */,
+				1B6B7DDC1250BFE000BB151F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		3E4BA243089833B7007656EC /* Build configuration list for PBXNativeTarget "EverySynth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

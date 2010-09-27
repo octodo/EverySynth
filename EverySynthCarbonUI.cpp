@@ -32,17 +32,34 @@ void radioArrayProc_ChannelSelect(UInt32 value, CAUGuiRadioArray* from, void* us
     ((EverySynthCarbonUI*)userData)->activateChannelPane(value);
 }
 
+void buttonProc_DeviceType(UInt32 value, CAUGuiButton* from, void* userData)
+{
+    ((EverySynthCarbonUI*)userData)->selectDevicePopup();
+}
+
+void listProc_BankSelect(UInt32 value, CAUGuiList* from, void * userData)
+{
+    ((EverySynthCarbonUI*)userData)->bankSelect(value);
+}
+
 OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 {
 	int XPos = (int) xoffset;
 	int YPos = (int) yoffset;
     
     CAAUParameter paramOutputDevice(mEditAudioUnit, kParam_MidiOutputDevice, kAudioUnitScope_Global, 0);
-    CAAUParameter ** channelParams = (CAAUParameter**) malloc(sizeof(CAAUParameter*) * kNumberOfChannelParameters * kNumChannels);
+    channelParams = (CAAUParameter**) malloc(sizeof(CAAUParameter*) * kNumberOfChannelParameters * kNumChannels);
     for (int i=0; i<kNumChannels; i++) {
         for (int j=0; j<kNumberOfChannelParameters; j++) {
             CHANNEL_PARAMETER(j, i) = new CAAUParameter(mEditAudioUnit, j, kAudioUnitScope_Part, i);
         }
+    }
+    
+    devDb = new DeviceDB(CFSTR("nothing"));
+    deviceList = devDb->getDeviceList();
+    CreateNewMenu(17492, 0, &deviceTypePopup);
+    for (int i=0; i<CFArrayGetCount(deviceList); i++) {
+        AppendMenuItemTextWithCFString(deviceTypePopup, (CFStringRef)CFArrayGetValueAtIndex(deviceList, i), 0, 0, NULL);
     }
 	
 	theGui = new CAUGuiMan(this, XPos, YPos);
@@ -56,9 +73,12 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 
     CAUGuiGraphic * graDeviceListBackground = new CAUGuiGraphic("device_list_background.png");
     theGui->addImage(graDeviceListBackground);
-
     CAUGuiGraphic * graMsbLsbBackground = new CAUGuiGraphic("msb_lsb_background.png");
     theGui->addImage(graMsbLsbBackground);
+    CAUGuiGraphic * graPatchListBackground = new CAUGuiGraphic("patch_list_background.png");
+    theGui->addImage(graPatchListBackground);
+    CAUGuiGraphic * graBankListBackground = new CAUGuiGraphic("bank_list_background.png");
+    theGui->addImage(graBankListBackground);
 
     // Buttons
     CAUGuiGraphic * graChannelMute = new CAUGuiGraphic("channel_mute.png", 2);
@@ -99,9 +119,11 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 	
     // DeviceType button
     where.set(13, 40, 231, 31);
-    CAUGuiLabeledButton * buttonDeviceType = new CAUGuiLabeledButton(theGui, 1, &where, graDeviceType, NULL, kPushButton);
-    buttonDeviceType->setText(CFSTR("Roland Fantom X"));
+    
+    buttonDeviceType = new CAUGuiLabeledButton(theGui, 1, &where, graDeviceType, NULL, kPushButton);
+    buttonDeviceType->setText("Unknown Device");
     buttonDeviceType->setOnValue(1);
+    buttonDeviceType->setUserProcedure(buttonProc_DeviceType, this);
     paneBackground->addCtrl(buttonDeviceType);
     
     // Mixer
@@ -129,30 +151,11 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
     
     // Output Device
     where.set(14, 83, 229, 135);
-    /*
-    CAUGuiDisplay * deviceList = new CAUGuiDisplay(theGui, paramOutputDevice, &where, kCAUGui_res_1, NULL, NULL, graDeviceTypeInactive);
-    deviceList->generatePopUpMenue();
-    deviceList->text_offset_y = 7;
-     */
+
     CAUGuiList * deviceList = new CAUGuiList(theGui, paramOutputDevice, &where, graDeviceListBackground);
     paneBackground->addCtrl(deviceList);
     
-    // Channel select buttons
-
-    /*
-    where.set(264, 242, 24, 23);
-
-    channelButtons = new CAUGuiLabeledButton*[kNumChannels];
-    for (int i=0; i<kNumChannels; i++) {
-        channelButtons[i] = new CAUGuiLabeledButton(theGui, 2, &where, graChannelSelect, NULL, kRadioButton);
-        channelButtons[i]->setText(CFStringCreateWithFormat(NULL, NULL, CFSTR("%d"), i+1));
-        channelButtons[i]->setUserProcedure(buttonProc_ChannelSelect, (void*)i);
-        channelButtons[i]->setOnValue(1);
-        paneBackground->addCtrl(channelButtons[i]);
-        where.offset(24, 0);
-    }
-     */
-    
+    // Channel select buttons    
     where.set(264, 242, kNumChannels*24, 23);
     channelButtonArray = new CAUGuiRadioArray(theGui, 9, &where, graChannelSelect, graDeviceType);
     channelButtonArray->setUserProc(radioArrayProc_ChannelSelect, this);
@@ -164,153 +167,43 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
     channelPane = new CAUGuiLayeredPane(theGui, &where, graChannelPaneBackground);
 	paneBackground->addCtrl(channelPane);
 	
+    bankLists = new CAUGuiList*[kNumChannels];
+    patchLists = new CAUGuiList*[kNumChannels];
+    bankMSBs = new CAUGuiDisplay*[kNumChannels];
+    bankLSBs = new CAUGuiDisplay*[kNumChannels];
+    
     for (int channel=0; channel<kNumChannels; channel++) {
         
         channelPane->addBackground(graChannelPaneBackground, channel);
                 
         // MSB/LSB
         where.set(48, 38, 105, 15);
-        CAUGuiDisplay * bankMsb = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_BankMSB, channel), &where, kCAUGui_res_1, NULL, NULL, graMsbLsbBackground);
+        bankMSBs[channel] = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_BankMSB, channel), &where, kCAUGui_res_1, NULL, NULL, graMsbLsbBackground);
         //bankMsb->generatePopUpMenue();
-        bankMsb->text_offset_y = 4;
-        channelPane->addCtrl(bankMsb, channel);
+        bankMSBs[channel]->text_offset_y = 4;
+        channelPane->addCtrl(bankMSBs[channel], channel);
         where.offset(0, 24);
-        CAUGuiDisplay * bankLsb = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_BankLSB, channel), &where, kCAUGui_res_1, NULL, NULL, graMsbLsbBackground);
+        bankLSBs[channel] = new CAUGuiDisplay(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_BankLSB, channel), &where, kCAUGui_res_1, NULL, NULL, graMsbLsbBackground);
         //bankLsb->generatePopUpMenue();
-        bankLsb->text_offset_y = 4;
-        channelPane->addCtrl(bankLsb, channel);
+        bankLSBs[channel]->text_offset_y = 4;
+        channelPane->addCtrl(bankLSBs[channel], channel);
+        
+        // Patch list
+        where.set(180, 34, 461, 250);
+        patchLists[channel] = new CAUGuiList(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_Patch, channel), &where, graPatchListBackground, 4);
+        patchLists[channel]->setFontSize(10.0);
+        patchLists[channel]->setItemPadding(2);
+        channelPane->addCtrl(patchLists[channel], channel);
+        
+        // Bank list
+        where.set(15, 90, 140, 195);
+        bankLists[channel] = new CAUGuiList(theGui, 2, &where, graBankListBackground);
+        bankLists[channel]->setItemNames(devDb->getBankNames());
+        bankLists[channel]->setUserProc(listProc_BankSelect, this);
+        channelPane->addCtrl(bankLists[channel], channel);
     }
     
     channelPane->setLayer(0);
-    
-	/*
-	// Create the two knobs
-	
-	where.set ( 8, 90, 80, 80 );
-	
-	CAUGuiKnob* myKnob = new CAUGuiKnob(myCAUGui, aKnob1, &where, kCAUGui_res_100, round_handle, knob_back );
-	myKnob->shrinkForeBounds ( 28, 1, 28, 55 );
-	myPane->addCtrl( myKnob );
-	
-	eRect where2;	
-	where2.set ( &where );
-	where2.offset ( 0, 8 );
-	where2.align ( k_oSC ); // place the eRect below itself (o = outside, S = south, C = center)
-	
-	myKnob = new CAUGuiKnob(myCAUGui, aKnob2, &where2, kCAUGui_res_100, needle_handle, knob_back );
-	myPane->addCtrl( myKnob );
-	
-	
-	
-	
-	// Build layered Pane with 2 different Control sets
-	
-	where.align ( k_NEo );
-	where.offset ( 8, -12 );
-	where.size ( pane_back1->getWidth(),  pane_back1->getHeight());
-	
-	CAUGuiLayeredPane* myLayeredPane = new CAUGuiLayeredPane(myCAUGui, &where, pane_back1);
-	myPane->addCtrl( myLayeredPane );
-	
-	myLayeredPane->addBackground( pane_back2, 1 );
-	
-	
-	
-	// Add a switching Button to the Layered Pane (in all layers)
-	
-	where.set ( 100, 2, 55, 33 );
-	
-	CAUGuiButton* myLayerSwitch = new CAUGuiButton( myCAUGui, 1, &where, next_pane, next_pane, kIncButton );
-	
-	// user procedure to control visible Layer 
-	myLayerSwitch->setUserProcedure( switchLayer, myLayeredPane ); 
-    
-	myLayeredPane->addCtrl( myLayerSwitch );
-	
-	
-	
-	
-	// Make a horizontal sliders and add it to the layered pane ( layer 0 )
-	
-	where.set ( 16, 40, 143, 36 ); // always relative to embedding pane
-	
-	CAUGuiSlider* mySlider = new CAUGuiSlider(myCAUGui, aSlider1, &where, 1, kCAUGui_res_100, round_s_handle, h_slider_back );
-	mySlider->shrinkForeBounds ( 20, 5, 23, 7 );
-	myLayeredPane->addCtrl( mySlider, 0 );
-	
-	where.align ( k_oSC );
-	
-	CAUGuiSlider* mySlider2 = new CAUGuiSlider(myCAUGui, aSlider2, &where, 1, kCAUGui_res_100, round_s_handle, h_slider_back );
-	mySlider2->shrinkForeBounds ( 20, 5, 23, 7 );
-	myLayeredPane->addCtrl( mySlider2, 0 );
-	
-	// The generic Display (see NULL for textroutine/foregroundimage)
-	
-	where.align ( k_oSC );
-	where.size ( 96, 39 ); 
-	CAUGuiDisplay* myDisplay1 = new CAUGuiDisplay(myCAUGui, aDisplay1, &where, kCAUGui_res_1, NULL, NULL, display_back );
-	myDisplay1->shrinkForeBounds ( 17, 5, 23, 19 );
-	myLayeredPane->addCtrl( myDisplay1, 0 );
-    
-	
-	// make a clone with different textalignment but same parameter :-)
-    
-	where.align ( k_oSC );
-	myDisplay1 = new CAUGuiDisplay(myCAUGui, aDisplay1, &where, kCAUGui_res_1, NULL, NULL, display_back );
-	myDisplay1->shrinkForeBounds ( 17, 5, 23, 19 );
-	myDisplay1->setTextAlign ( 2 ); // align right
-	myLayeredPane->addCtrl( myDisplay1, 0 );
-    
-	myDisplay1->generatePopUpMenue ();
-	
-	
-	
-	// Make vertical sliders ( layer 1 )
-	
-	where.set ( 16, 40, 37, 142 ); // always relative to embedding pane
-	
-	mySlider = new CAUGuiSlider(myCAUGui, aSlider1, &where, 0, kCAUGui_res_100, horizontal_handle, v_slider_back );
-	mySlider->shrinkForeBounds ( 3, 18, 10, 24 );
-	myLayeredPane->addCtrl( mySlider, 1 );
-	
-	where.align ( k_MEo );
-	
-	mySlider2 = new CAUGuiSlider(myCAUGui, aSlider2, &where, 0, kCAUGui_res_100, horizontal_handle, v_slider_back );
-	mySlider2->shrinkForeBounds ( 3, 18, 10, 24 );
-	myLayeredPane->addCtrl( mySlider2, 1 );
-	
-	where.align ( k_MEo );
-	
-	mySlider2 = new CAUGuiSlider(myCAUGui, aSlider3, &where, 0, kCAUGui_res_100, vu_image, v_slider_back );
-	mySlider2->shrinkForeBounds ( 13, 19, 17, 23 );
-	myLayeredPane->addCtrl( mySlider2, 1 );
-    
-    
-	// VU METER
-	where.at (290, 116 );
-    
-	CAUGuiMeter* myMeter = new CAUGuiMeter(myCAUGui, kRMS_Right, &where, kCAUGui_res_100, vu_image, v_led_back );
-	myMeter->shrinkForeBounds ( 13, 19, 17, 23 );
-	myPane->addCtrl( myMeter );
-	
-	where.align ( k_MEo );
-	myMeter = new CAUGuiMeter(myCAUGui, kRMS_Left, &where, kCAUGui_res_100, vu_image, v_led_back );
-	myMeter->shrinkForeBounds ( 13, 19, 17, 23 );
-	myPane->addCtrl( myMeter );
-     */
-    
-    
-	
-	/******************************************************************************
-     
-     EZ preset generation.
-     
-     A small white button appears.
-     Press it and your preset setup code jumps outta your console window...
-     
-     Better don't put this into your release version...
-     
-     ******************************************************************************/
     
     XPos = (int) xoffset;
 	YPos = (int) yoffset;
@@ -326,3 +219,49 @@ void EverySynthCarbonUI::activateChannelPane(int number)
     channelPane->setLayer(number);
 }
 
+void EverySynthCarbonUI::selectDevicePopup()
+{
+    char curDevice[kPropertySize_MidiDeviceType];
+    
+    AudioUnitGetProperty(mEditAudioUnit, kProperty_MidiDeviceType, kAudioUnitScope_Global, 0, curDevice, NULL);
+    
+    Point pt;
+    GetGlobalMouse(&pt);
+    
+    int result = PopUpMenuSelect(deviceTypePopup, pt.h, pt.v, CFArrayGetFirstIndexOfValue(deviceList, CFRangeMake(0, CFArrayGetCount(deviceList)), CFStringCreateWithCStringNoCopy(NULL, curDevice, 0, NULL)));
+    result &= 0xFFFF;
+    printf("%d\n", result);
+    
+    char * newDevice = (char*)CFStringGetCStringPtr((CFStringRef)CFArrayGetValueAtIndex(deviceList, result-1), 0);
+    AudioUnitSetProperty(mEditAudioUnit, kProperty_MidiDeviceType, kAudioUnitScope_Global, 0, newDevice, strlen(newDevice));
+    
+    buttonDeviceType->setText(newDevice);
+    devDb->loadDevice((CFStringRef)CFArrayGetValueAtIndex(deviceList, result-1));
+    
+    CFArrayRef bankNames = devDb->getBankNames();
+    
+    for (int i=0; i<kNumChannels; i++) {
+        bankLists[i]->setItemNames(bankNames);
+        bankLists[i]->setRange(CFArrayGetCount(bankNames));
+        bankSelect(0, i);
+    }
+}
+
+void EverySynthCarbonUI::bankSelect(int value, int channel)
+{
+    int curChannel;
+    if (channel == -1)
+        curChannel = channelPane->getLayer();
+    else
+        curChannel = channel;
+
+    patchLists[curChannel]->setItemNames(devDb->getPatchNames(value));
+    
+    BankSelectInfo bs = devDb->getBankSelectInfo(value);
+    
+    SetControl32BitValue(bankMSBs[curChannel]->getCarbonControl(), bs.msb);
+    SetControl32BitValue(bankLSBs[curChannel]->getCarbonControl(), bs.lsb);
+    
+    Draw1Control(bankMSBs[curChannel]->getCarbonControl());
+    Draw1Control(bankLSBs[curChannel]->getCarbonControl());
+}

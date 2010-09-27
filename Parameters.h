@@ -94,7 +94,7 @@ enum {
 
 /***************** properties **********************************/
 
-static const int kPropertySize_MidiDeviceType = sizeof(char[32]);
+static const UInt32 kPropertySize_MidiDeviceType = sizeof(char[32]);
 
 enum {
     kProperty_MidiDeviceType,

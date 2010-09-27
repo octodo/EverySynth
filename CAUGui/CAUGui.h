@@ -415,7 +415,7 @@ public:
 	//! 0 = left, 1 = center, 2 = right
 	virtual void 				setTextAlign ( int a ) { textalign = a; }
 
-	
+	void                        setRange(UInt32 r) { Range = r; SetControl32BitMaximum(carbonControl, r - 1); }
 	
 	
 protected:

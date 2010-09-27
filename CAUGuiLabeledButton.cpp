@@ -54,7 +54,7 @@ void CAUGuiLabeledButton::draw(CGContextRef context, UInt32 portHeight)
     CGContextShowTextAtPoint(context, bounds.origin.x, bounds.origin.y, text, strlen(text));
 }
 
-void CAUGuiLabeledButton::setText(CFStringRef theText)
+void CAUGuiLabeledButton::setText(char * theText)
 {
-    CFStringGetBytes(theText, CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
+    strncpy(text, theText, 31);
 }

@@ -34,6 +34,8 @@
 #include "CAUGuiLabeledButton.h"
 #include "CAUGuiRadioArray.h"
 
+#include "DeviceDB.h"
+
 #include "Parameters.h"
 
 
@@ -56,10 +58,23 @@ public:
 	virtual OSStatus CreateUI(Float32 xoffset, Float32 yoffset);
     
     void activateChannelPane(int number);
+    void selectDevicePopup();
+    void bankSelect(int value, int channel = -1);
     
 private:
+    CAAUParameter ** channelParams;
+    
     CAUGuiMan * theGui;
     CAUGuiLayeredPane * channelPane;
-    CAUGuiLabeledButton ** channelButtons;
+    CAUGuiLabeledButton * buttonDeviceType;
     CAUGuiRadioArray * channelButtonArray;
+    
+    CAUGuiList ** bankLists;
+    CAUGuiList ** patchLists;
+    CAUGuiDisplay ** bankMSBs;
+    CAUGuiDisplay ** bankLSBs;    
+    
+    DeviceDB * devDb;
+    MenuRef deviceTypePopup;
+    CFArrayRef deviceList;
 };

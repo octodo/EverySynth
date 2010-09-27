@@ -15,7 +15,7 @@ public:
 
 	virtual void draw(CGContextRef context, UInt32 portHeight);
     
-    void setText(CFStringRef text);
+    void setText(char * text);
     
 private:
     

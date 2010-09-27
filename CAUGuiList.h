@@ -14,12 +14,21 @@
 
 #include "CAUGui.h"
 
+class CAUGuiList;
+
+typedef void (*listUserProcedure)( UInt32 value, CAUGuiList* from, void* userData );
+
 class CAUGuiList : public CAUGuiCtrl
 {
 public:
 	
     CAUGuiList(CAUGuiMan * theChief,
                CAAUParameter &theAuvp,
+               eRect * theWhere,
+               CAUGuiGraphic * theBackground,
+               int col = 1);
+    CAUGuiList(CAUGuiMan * theChief,
+               UInt32 theRange,
                eRect * theWhere,
                CAUGuiGraphic * theBackground,
                int col = 1);
@@ -30,16 +39,33 @@ public:
 	virtual void mouseDown(Point *P, bool, bool);
     //virtual void mouseUp(Point *P, bool, bool);
     
-    //void setItemNames(CFStringRef * theItemNames);
+    void setItemNames(CFArrayRef theItemNames) {
+        if (itemNames != NULL) {
+            CFRelease(itemNames);
+        }
+        if (theItemNames == NULL) {
+            itemNames = NULL;
+        }
+        else {
+            itemNames = CFArrayCreateCopy(NULL, theItemNames);
+        }
+        //SetControl32BitValue(carbonControl, 0);
+        Draw1Control(carbonControl);
+    }
     
     void setItemPadding(int padding) { itemPadding = padding; }
+    
+    void setUserProc(listUserProcedure theUserProc, void * theUserData) { userProc = theUserProc; userData = theUserData; }
     
 private:
     
 	CAUGuiGraphic *	background;
-    CFStringRef * itemNames;
+    CFArrayRef itemNames;
     int numColumns;
     int itemPadding;
+    
+    listUserProcedure userProc;
+    void * userData;
 };
 
 

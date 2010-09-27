@@ -139,6 +139,8 @@ public:
 	
 	//! adding a CAUGuiGraphic to a group at a specified coordinate
 	virtual void	placeGroupLabel ( CAUGuiGraphic* label, int group, int x, int y );
+    
+    int             getLayer() { return currentLayer; }
 	
 protected:
 		
