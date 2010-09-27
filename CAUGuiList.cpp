@@ -12,11 +12,14 @@
 CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
                        CAAUParameter &theAuvp,
                        eRect * theWhere,
-                       CAUGuiGraphic * theBackground)
+                       CAUGuiGraphic * theBackground,
+                       int col)
 :	CAUGuiCtrl (theChief, theAuvp, theWhere, kCAUGui_res_1)
 {
     background = theBackground;
     itemNames = NULL;
+    numColumns = col;
+    itemPadding = 5;
 }
 
 void CAUGuiList::mouseDown(Point *P, bool, bool)
@@ -28,15 +31,17 @@ void CAUGuiList::mouseDown(Point *P, bool, bool)
 	if ( carbonControl != NULL )
 		value = GetControl32BitValue( carbonControl );
     
-    int item_height = 23;
-    int num_items_per_page = where.h / item_height;
+    int item_height = (int)font_size + 2 * itemPadding;
+    int item_width = where.w / numColumns;
+    int num_items_per_column = where.h / item_height;
+    int num_items_per_page = num_items_per_column * numColumns;
     int current_page = value / num_items_per_page;
 
-    int item = P->v / item_height;
+    int item = num_items_per_page * current_page + P->v / item_height + (P->h / item_width) * num_items_per_column;
     
     SetControl32BitValue(carbonControl, item);
 
-	HIViewSetNeedsDisplay(carbonControl, true);
+	Draw1Control(carbonControl);
 }
 
 void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
@@ -69,10 +74,12 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
     //CGContextShowTextAtPoint(context, 0, 0, "TEST\n", 5);
     //CGPoint pt = CGContextGetTextPosition(context);
     //int item_height = pt.y;
-    int item_height = 23;
+    int item_height = (int)font_size + 2 * itemPadding;
+    int item_width = bounds.size.width / numColumns;
     int approx_font_height = (int)font_size;
     
-    int num_items_per_page = bounds.size.height / item_height;
+    int num_items_per_column = bounds.size.height / item_height;
+    int num_items_per_page = num_items_per_column * numColumns;
     int current_page = value / num_items_per_page;
     
     CGContextSetRGBFillColor( context, col_red, col_green, col_blue, col_alpha );
@@ -85,9 +92,9 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
         int nItem = current_page * num_items_per_page + i;
         
         CGRect itemRect;
-        itemRect.origin.x = bounds.origin.x;
-        itemRect.origin.y = bounds.origin.y + bounds.size.height - (i+1) * item_height;
-        itemRect.size.width = bounds.size.width;
+        itemRect.origin.x = bounds.origin.x + (i / num_items_per_column) * item_width;
+        itemRect.origin.y = bounds.origin.y + bounds.size.height - (i % num_items_per_column + 1) * item_height;
+        itemRect.size.width = item_width;
         itemRect.size.height = item_height;
         
         if (itemNames != NULL) {

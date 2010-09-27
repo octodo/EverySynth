@@ -21,7 +21,8 @@ public:
     CAUGuiList(CAUGuiMan * theChief,
                CAAUParameter &theAuvp,
                eRect * theWhere,
-               CAUGuiGraphic * theBackground);
+               CAUGuiGraphic * theBackground,
+               int col = 1);
 	
 	virtual ~CAUGuiList() { }
     
@@ -31,10 +32,14 @@ public:
     
     //void setItemNames(CFStringRef * theItemNames);
     
+    void setItemPadding(int padding) { itemPadding = padding; }
+    
 private:
     
 	CAUGuiGraphic *	background;
     CFStringRef * itemNames;
+    int numColumns;
+    int itemPadding;
 };
 
 
