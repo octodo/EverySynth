@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Banks</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>User A</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>User B</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset A</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>64</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset B</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>65</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset C</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>66</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset D</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>67</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset E</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>68</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset F</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>69</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset G</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>70</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset H</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>71</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Preset I</string>
+			<key>MSB</key>
+			<integer>87</integer>
+			<key>LSB</key>
+			<integer>72</integer>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>GM</string>
+			<key>MSB</key>
+			<integer>121</integer>
+			<key>LSB</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
