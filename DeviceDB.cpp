@@ -45,8 +45,19 @@ CFDictionaryRef DeviceDB::getDeviceInfo(CFStringRef deviceName)
 
 CFArrayRef DeviceDB::getDeviceList(CFStringRef manufacturer)
 {
-    CFStringRef names[] = { CFSTR("Roland Fantom-X"), CFSTR("Roland JV-1010") };
-    return CFArrayCreate(NULL, (const void**)names, 2, NULL);
+    CFMutableArrayRef ret = CFArrayCreateMutable(NULL, 10, NULL);
+    CFArrayRef urls = CFBundleCopyResourceURLsOfType(CFBundleGetBundleWithIdentifier(CFSTR("net.pmlk.audiounits.EverySynth")), CFSTR("plist"), CFSTR("Devices"));
+    
+    for (int i=0; i<CFArrayGetCount(urls); i++) {
+        CFStringRef lastComponent = CFURLCopyLastPathComponent((CFURLRef)CFArrayGetValueAtIndex(urls, i));
+        CFStringRef item = CFStringCreateWithSubstring(NULL, lastComponent, CFRangeMake(0, CFStringGetLength(lastComponent) - 6));
+        CFArrayAppendValue(ret, item);
+        CFRelease(lastComponent);
+    }
+    
+    CFRelease(urls);
+    
+    return ret;
 }
 
 void DeviceDB::loadDevice(CFStringRef deviceName)
