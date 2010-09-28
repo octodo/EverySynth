@@ -11,6 +11,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>0</integer>
+			<key>Patches</key>
+			<array>
+                <string>UltimatGrand</string>
+                <string>Strobot</string>
+                <string>Full Strings</string>
+                <string>The VorteX</string>
+                <string>Purple Organ</string>
+                <string>X Brs Sect 1</string>
+                <string>FlamencoGt X</string>
+                <string>* EuroPhrSeq</string>
+                <string>SquareSphere</string>
+                <string>HimalayaThaw</string>
+                <string>Nu RnB Bass</string>
+                <string>Killerbeez</string>
+                <string>Angel Pipes</string>
+                <string>GTR Heroes</string>
+                <string>Symphonika</string>
+                <string>Cut Thru Wah</string>
+                <string>Mr. Nasty</string>
+                <string>ParisRomance</string>
+                <string>Spr SideBand</string>
+                <string>Tre EP</string>
+                <string>Epic Lead</string>
+                <string>Motion Pad</string>
+                <string>VKHold4Speed</string>
+                <string>Double Track</string>
+                <string>Nylon Gtr VS</string>
+                <string>AirPluck</string>
+                <string>Nu RnB Saw 1</string>
+                <string>X Finger Bs2</string>
+                <string>SolarPleXus</string>
+                <string>Arie Piano</string>
+                <string>StellarTreck</string>
+                <string>Larsen /Aft</string>
+                <string>Moody Tron</string>
+                <string>Magic Wave</string>
+                <string>DigimaX</string>
+                <string>X Perc Organ</string>
+                <string>Mini Growl</string>
+                <string>Snappy Clav</string>
+                <string>Staccato VS</string>
+                <string>Life-on</string>
+                <string>Powerline</string>
+                <string>Disto Stab !</string>
+                <string>Piano Oz</string>
+                <string>Space &amp; Time</string>
+                <string>Cello</string>
+                <string>CerealKiller</string>
+                <string>EP Belle</string>
+                <string>Trancy X</string>
+                <string>HimalayaPipe</string>
+                <string>JP8000 Brass</string>
+                <string>WithALtlHelp</string>
+                <string>Strobe X</string>
+                <string>Trancepire</string>
+                <string>TubyRuesday</string>
+                <string>Exhale</string>
+                <string>Searing COSM</string>
+                <string>Follow</string>
+                <string>Grand Pipe</string>
+                <string>Sad ceremony</string>
+                <string>BodyElectric</string>
+                <string>Doubled Bass</string>
+                <string>Xtrem Sine</string>
+                <string>Mod Chord</string>
+                <string>Filament</string>
+                <string>SuperSawSlow</string>
+                <string>FS Wurly</string>
+                <string>Mash Pad</string>
+                <string>Vocastic</string>
+                <string>Bon Voyage</string>
+                <string>Visionary</string>
+                <string>So true...</string>
+                <string>Are U ready?</string>
+                <string>Mellow Tron</string>
+                <string>Shangri-La</string>
+                <string>BluesHrp V/S</string>
+                <string>EuronalSynth</string>
+                <string>Alto Sax</string>
+                <string>SBF Nozer</string>
+                <string>Nu Romance</string>
+                <string>Ring Worldz</string>
+                <string>Rezo Sync</string>
+                <string>Over-D6</string>
+                <string>Orange Skin</string>
+                <string>Atk Flute</string>
+                <string>* FiestaBeat</string>
+                <string>Lounge Kit</string>
+                <string>Galaxadin</string>
+                <string>Tornrubber</string>
+                <string>Comp Stl Gtr</string>
+                <string>Pop Brs Stac</string>
+                <string>Sweet House</string>
+                <string>Celebrated</string>
+                <string>Digitvox</string>
+                <string>Viola</string>
+                <string>Optik’Synth</string>
+                <string>Crystal EP</string>
+                <string>xcultural</string>
+                <string>Control Room</string>
+                <string>Pearly Harp</string>
+                <string>Machine Str</string>
+                <string>X Mute Bass</string>
+                <string>Bass Drive</string>
+                <string>Dance Steam</string>
+                <string>Riven Pad</string>
+                <string>Vint Clavier</string>
+                <string>Jazz Guitar</string>
+                <string>When I’m 64</string>
+                <string>SideBandBell</string>
+                <string>D n’ Bass</string>
+                <string>La Seine</string>
+                <string>InfinitePhsr</string>
+                <string>Wired Synth</string>
+                <string>5th Pad X</string>
+                <string>FS SoapOpera</string>
+                <string>NylonGt /HO</string>
+                <string>Dark Grand</string>
+                <string>Auto Sync</string>
+                <string>Film Cue</string>
+                <string>Violin</string>
+                <string>Minty Fresh</string>
+                <string>StakDraw Org</string>
+                <string>F.Horns Sect</string>
+                <string>Wind &amp; Str 1</string>
+                <string>FS 12str Gtr</string>
+                <string>Comp Picker</string>
+                <string>eXisDance</string>
+                <string>Dreaming Box</string>
+                <string>Andes Mood</string>
+			</array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -19,6 +150,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>1</integer>
+            <key>Patches</key>
+            <array>
+                <string>Dust Bass</string>
+                <string>Survivoz</string>
+                <string>Backing PhEP</string>
+                <string>Tutti</string>
+                <string>ActualAnalog</string>
+                <string>TrnsSweepPad</string>
+                <string>Ivan’s</string>
+                <string>Triple X</string>
+                <string>DelicatePizz</string>
+                <string>SubOscar</string>
+                <string>FS Sitar 1</string>
+                <string>Punker 1</string>
+                <string>Ooh La La</string>
+                <string>Solo Tb</string>
+                <string>Psycho EP</string>
+                <string>SBF Lead</string>
+                <string>Flange Dream</string>
+                <string>X Picked Bs</string>
+                <string>Classic Lead</string>
+                <string>LongDistance</string>
+                <string>X Pure Grand</string>
+                <string>Da Chronic</string>
+                <string>Tenor Sax</string>
+                <string>Dancefloor</string>
+                <string>Shroomy</string>
+                <string>Ethno Keys</string>
+                <string>Simply Nasty</string>
+                <string>Beat Vox</string>
+                <string>AMP EP</string>
+                <string>Contrabass</string>
+                <string>Bend SynBrs</string>
+                <string>Modular</string>
+                <string>Dirty D/A</string>
+                <string>Tekno Tone</string>
+                <string>Nu Bace</string>
+                <string>Mod Scanner</string>
+                <string>Fantomas Pad</string>
+                <string>FS Fretnot 1</string>
+                <string>Solo Tp</string>
+                <string>Farewell</string>
+                <string>Wezcoast</string>
+                <string>FS Flute</string>
+                <string>Theramax</string>
+                <string>Mojo Man</string>
+                <string>Solo Sop Sax</string>
+                <string>Timeline</string>
+                <string>Wet TC</string>
+                <string>Underneath</string>
+                <string>Lazer Points</string>
+                <string>Wire Sync</string>
+                <string>JD-800 Piano</string>
+                <string>Cross Talk</string>
+                <string>Nu Pad</string>
+                <string>Phase Clavi</string>
+                <string>Anadroid</string>
+                <string>Phono Organ</string>
+                <string>Dirt &amp; Grime</string>
+                <string>Rockin’ Dly</string>
+                <string>Mr. Fourier</string>
+                <string>NewAge Frtls</string>
+                <string>Evolution X</string>
+                <string>Baritone Sax</string>
+                <string>Hall Oboe</string>
+                <string>TB-Sequence</string>
+                <string>GuitaratiuG</string>
+                <string>Alpha Hoover</string>
+                <string>ChoruSE ONE</string>
+                <string>Sinetific</string>
+                <string>Wired Rez</string>
+                <string>FS Marimba</string>
+                <string>SlippingSaws</string>
+                <string>Choral Sweep</string>
+                <string>Flugel Horn</string>
+                <string>TDreamTouch</string>
+                <string>Polar Morn</string>
+                <string>Drop Bass</string>
+                <string>Pop Orch</string>
+                <string>Nyl-Intro</string>
+                <string>Morph Filter</string>
+                <string>Kinda Kurt</string>
+                <string>Downright Bs</string>
+                <string>50`SteelDrms</string>
+                <string>Reso SynBass</string>
+                <string>South Pole</string>
+                <string>Studio Grand</string>
+                <string>VirtualHuman</string>
+                <string>Darmstrat X</string>
+                <string>Ending Scene</string>
+                <string>Distro FXM</string>
+                <string>FullDraw Org</string>
+                <string>Alien Voice</string>
+                <string>Stadium SBF</string>
+                <string>Good Old Day</string>
+                <string>FS Slap Bass</string>
+                <string>Skydiver</string>
+                <string>Harmon Mute</string>
+                <string>PeakArpSine</string>
+                <string>Alien Bubble</string>
+                <string>Twin StratsB</string>
+                <string>Orbiting</string>
+                <string>Sahara Str</string>
+                <string>Fundamental</string>
+                <string>SA Dance Pno</string>
+                <string>Dirty Saw</string>
+                <string>X-panda</string>
+                <string>Saturn Siren</string>
+                <string>Orch &amp; Horns</string>
+                <string>Amore Story</string>
+                <string>Raven Chord</string>
+                <string>Soulfinger</string>
+                <string>Landing Pad</string>
+                <string>Virtual RnBs</string>
+                <string>Clarence.net</string>
+                <string>PanningFrmnt</string>
+                <string>Quiet River</string>
+                <string>OB Slow Str</string>
+                <string>FS Loud Gtr</string>
+                <string>X Finger Bs1</string>
+                <string>VelPanWurly</string>
+                <string>Syn Opera</string>
+                <string>Modular Lead</string>
+                <string>With Love</string>
+                <string>JP-8 Phase</string>
+                <string>Pop Brs wAtk</string>
+                <string>Cicada Piano</string>
+                <string>X StrSection</string>
+                <string>Jupiter-X</string>
+                <string>Bending Logo</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -27,6 +289,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>64</integer>
+            <key>Patches</key>
+            <array>
+                <string>So true...</string>
+                <string>ConcertPiano</string>
+                <string>Warm Piano</string>
+                <string>Warm Pad Pno</string>
+                <string>Warm Str Pno</string>
+                <string>BealeSt Walk</string>
+                <string>Rapsody</string>
+                <string>JD-800 Piano</string>
+                <string>SA Dance Pno</string>
+                <string>FS E-Grand</string>
+                <string>FS Blend Pno</string>
+                <string>LA Piano</string>
+                <string>FS 70'EP</string>
+                <string>StageEP Trem</string>
+                <string>Back2the60s</string>
+                <string>Tine EP</string>
+                <string>LEO EP</string>
+                <string>LonesomeRoad</string>
+                <string>Age’n’Tines</string>
+                <string>Brill TremEP</string>
+                <string>Crystal EP</string>
+                <string>Celestial EP</string>
+                <string>Spirit Tines</string>
+                <string>Psycho EP</string>
+                <string>Mk2 Stg phsr</string>
+                <string>SA Stacks</string>
+                <string>Backing PhEP</string>
+                <string>Balladeer</string>
+                <string>Remember</string>
+                <string>FS Wurly</string>
+                <string>Wurly Trem</string>
+                <string>Super Wurly</string>
+                <string>Pulse EPno</string>
+                <string>Fonky Fonky</string>
+                <string>FM EP</string>
+                <string>FM-777</string>
+                <string>FM EPad</string>
+                <string>D6 Clavi</string>
+                <string>Cutter Clavi</string>
+                <string>FS Clavi</string>
+                <string>Funky D</string>
+                <string>Phase Clavi</string>
+                <string>BPF Clavi Ph</string>
+                <string>Pulse Clavi</string>
+                <string>Analog Clavi</string>
+                <string>Reso Clavi</string>
+                <string>Harpsy Clavi</string>
+                <string>FS Harpsi</string>
+                <string>Amadeus</string>
+                <string>FS Celesta</string>
+                <string>FS Glocken</string>
+                <string>Music Bells</string>
+                <string>FS Musicbox</string>
+                <string>MuBox Pad</string>
+                <string>Kalimbells</string>
+                <string>Himalaya Ice</string>
+                <string>Dreaming Box</string>
+                <string>Step Ice</string>
+                <string>FS Bell 1</string>
+                <string>FS Bell 2</string>
+                <string>Candy Bell</string>
+                <string>FS Chime</string>
+                <string>Bell Ring</string>
+                <string>Tubular Bell</string>
+                <string>5th Key</string>
+                <string>Vibrations</string>
+                <string>FS Vibe</string>
+                <string>FS Marimba</string>
+                <string>FS Xylo</string>
+                <string>Ethno Keys</string>
+                <string>Synergy MLT</string>
+                <string>Steel Drums</string>
+                <string>Xylosizer</string>
+                <string>Toy Box</string>
+                <string>FullDraw Org</string>
+                <string>StakDraw Org</string>
+                <string>FullStop Org</string>
+                <string>FS Perc Org</string>
+                <string>Euro Organ</string>
+                <string>Perky Organ</string>
+                <string>LoFi PercOrg</string>
+                <string>Rochno Org</string>
+                <string>R&amp;B Organ 1</string>
+                <string>R&amp;B Organ 2</string>
+                <string>Zepix Organ</string>
+                <string>Peep Durple</string>
+                <string>FS Dist Bee</string>
+                <string>60’s Org 1</string>
+                <string>60’s Org 2</string>
+                <string>FS SoapOpera</string>
+                <string>Chapel Organ</string>
+                <string>Grand Pipe</string>
+                <string>Masked Opera</string>
+                <string>Pipe Org/Mod</string>
+                <string>Vodkakordion</string>
+                <string>Squeeze Me!</string>
+                <string>Guinguette</string>
+                <string>Harmonderca</string>
+                <string>BluesHrp V/S</string>
+                <string>Green Bullet</string>
+                <string>SoftNyln Gtr</string>
+                <string>FS Nylon Gt</string>
+                <string>Wet Nyln Gtr</string>
+                <string>Pre Mass Hum</string>
+                <string>Thick Steel</string>
+                <string>Uncle Martin</string>
+                <string>Wide Ac Gtr</string>
+                <string>Comp Stl Gtr</string>
+                <string>Stl Gtr Duo</string>
+                <string>FS 12str Gtr</string>
+                <string>So good !</string>
+                <string>Muted Gtr Pk</string>
+                <string>StratSeq’nce</string>
+                <string>Fixx it</string>
+                <string>Jazz Guitar</string>
+                <string>DynoJazz Gtr</string>
+                <string>Wet TC</string>
+                <string>Clean Gtr</string>
+                <string>Crimson Gtr</string>
+                <string>Touchee Funk</string>
+                <string>Plug n’ Gig</string>
+                <string>Kinda Kurt</string>
+                <string>Nice Oct Gtr</string>
+                <string>Strat Gtr</string>
+                <string>JC Strat Bdy</string>
+                <string>Twin StratsB</string>
+                <string>BluNoteStrat</string>
+                <string>FS Funk Gtr</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -35,6 +428,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>65</integer>
+            <key>Patches</key>
+            <array>
+                <string>GK Dubguitar</string>
+                <string>&amp; Scratchee</string>
+                <string>Touch Drive</string>
+                <string>FS Chunk</string>
+                <string>Trem-o-Vibe</string>
+                <string>Nice Dist Gt</string>
+                <string>LP Dist</string>
+                <string>Hurting Gtr</string>
+                <string>Searing COSM</string>
+                <string>FS Loud Gtr</string>
+                <string>FS Plugged!!</string>
+                <string>Punker 1</string>
+                <string>FS PowerChd</string>
+                <string>Punker 2</string>
+                <string>Ulti Ac Bass</string>
+                <string>Downright Bs</string>
+                <string>Ultimo Bass</string>
+                <string>Roomy Bass</string>
+                <string>Comp’d JBass</string>
+                <string>FingerMaster</string>
+                <string>CompressBass</string>
+                <string>All Round Bs</string>
+                <string>R&amp;B Bs/Slide</string>
+                <string>Thumb Up!</string>
+                <string>Tubby Mute</string>
+                <string>Chicken Bass</string>
+                <string>Snug Bass</string>
+                <string>Return2Base!</string>
+                <string>A Big Pick</string>
+                <string>Basement</string>
+                <string>FS Fretnot 1</string>
+                <string>FS Fretnot 2</string>
+                <string>RichFretless</string>
+                <string>Got Pop?</string>
+                <string>JBass v/Thmb</string>
+                <string>FS Slap Bass</string>
+                <string>LEO Bass</string>
+                <string>Smooth Bass</string>
+                <string>MC-404 Bass</string>
+                <string>SH-101 Bs 1</string>
+                <string>FS Syn Bass1</string>
+                <string>Electro Rubb</string>
+                <string>R&amp;B Bass 1</string>
+                <string>Enorjizor</string>
+                <string>LowFat Bass</string>
+                <string>Doze Bass</string>
+                <string>FS Flat Bs</string>
+                <string>Saw&amp;MG Bass</string>
+                <string>R&amp;B Bass 2</string>
+                <string>Foundation</string>
+                <string>R&amp;B Bass 3</string>
+                <string>HipHop Bs 1</string>
+                <string>HipHop Bs 2</string>
+                <string>Solid Goa</string>
+                <string>ResoSyn Bs 1</string>
+                <string>SH-1 Bass</string>
+                <string>SH-101 Bs 2</string>
+                <string>FS Syn Bass2</string>
+                <string>Poly Bass</string>
+                <string>Punch MG 1</string>
+                <string>Gashed Bass</string>
+                <string>Q Bass</string>
+                <string>FS Rubber Bs</string>
+                <string>ResoSyn Bs 2</string>
+                <string>Super-G DX</string>
+                <string>Punch MG 2</string>
+                <string>Kickin’ Bass</string>
+                <string>OilDrum Bass</string>
+                <string>Glide-iator</string>
+                <string>MG+SubOsc Bs</string>
+                <string>FS Unison Bs</string>
+                <string>TexturedBusy</string>
+                <string>Detune Bass</string>
+                <string>Lo Bass</string>
+                <string>SQ Pan</string>
+                <string>FS GarageBs1</string>
+                <string>FS GarageBs2</string>
+                <string>Sub Sonic</string>
+                <string>FS Jungle Bs</string>
+                <string>R&amp;B Bass 4</string>
+                <string>Beepin Bass</string>
+                <string>MC-TB Bass</string>
+                <string>Acdg Bass</string>
+                <string>Loco Voco</string>
+                <string>TBasic</string>
+                <string>Unplug it!</string>
+                <string>V.Form Bass</string>
+                <string>S&amp;H Bass</string>
+                <string>Destroyed Bs</string>
+                <string>FS Acid Bs</string>
+                <string>Lo-Fi TB</string>
+                <string>Violin</string>
+                <string>Viola</string>
+                <string>Cello</string>
+                <string>Contrabass</string>
+                <string>Dolce Qrt</string>
+                <string>Chamber Str</string>
+                <string>Small Str</string>
+                <string>Studio Sect.</string>
+                <string>Stringz 101</string>
+                <string>Crossed Bows</string>
+                <string>FS Strings</string>
+                <string>2-way Sect.</string>
+                <string>Warm Strings</string>
+                <string>Stacc mp Str</string>
+                <string>Magnolia Str</string>
+                <string>Movie Scene</string>
+                <string>Gang Strangs</string>
+                <string>Clustered!?!</string>
+                <string>DramaSect/sw</string>
+                <string>DelicatePizz</string>
+                <string>Vls PizzHall</string>
+                <string>Orch Pizz</string>
+                <string>Wind &amp; Str 1</string>
+                <string>Wind &amp; Str 2</string>
+                <string>Farewell</string>
+                <string>Orch &amp; Horns</string>
+                <string>Soft Orch 1</string>
+                <string>Soft Orch 2</string>
+                <string>Henry IX</string>
+                <string>Ending Scene</string>
+                <string>Good Old Day</string>
+                <string>FS WindWood</string>
+                <string>Clarence.net</string>
+                <string>FS Oboe</string>
+                <string>Hall Oboe</string>
+                <string>English Horn</string>
+                <string>Bassoon</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -43,6 +567,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>66</integer>
+            <key>Patches</key>
+            <array>
+                <string>FS Flute</string>
+                <string>Atk Flute</string>
+                <string>Piccolo</string>
+                <string>Andes Mood</string>
+                <string>Pan Pipes</string>
+                <string>Solo Tp</string>
+                <string>Horn Chops</string>
+                <string>Flugel Horn</string>
+                <string>Spit Flugel</string>
+                <string>Mute Tp /Mod</string>
+                <string>Harmon Mute</string>
+                <string>Soft Tb</string>
+                <string>Solo Tb</string>
+                <string>Solo Bone</string>
+                <string>Grande Tuba</string>
+                <string>FS Tuba</string>
+                <string>StackTp Sect</string>
+                <string>Tb Section</string>
+                <string>TpTb Sect.</string>
+                <string>FS Brass</string>
+                <string>DynamicBrass</string>
+                <string>Tpts &amp; Tmbs</string>
+                <string>Brass &amp; Sax</string>
+                <string>BrassPartOut</string>
+                <string>Simple Tutti</string>
+                <string>Full sForza</string>
+                <string>F.Horns Sect</string>
+                <string>Stereo Brass</string>
+                <string>Brass Fall</string>
+                <string>FS Saw Brass</string>
+                <string>Wide SynBrss</string>
+                <string>DetuneSawBrs</string>
+                <string>J-Pop Brass</string>
+                <string>Brash!</string>
+                <string>Jump For KY</string>
+                <string>Neo SuperBrs</string>
+                <string>SoftSynBrass</string>
+                <string>Silky JP</string>
+                <string>Silk Brs Pad</string>
+                <string>FatSynBrass</string>
+                <string>Soprano Sax</string>
+                <string>Solo Sop Sax</string>
+                <string>Alto mp</string>
+                <string>Alto Sax</string>
+                <string>Solo AltoSax</string>
+                <string>AltoLead Sax</string>
+                <string>Tenor Sax</string>
+                <string>Fat TenorSax</string>
+                <string>Baritone Sax</string>
+                <string>Sax Sect. 1</string>
+                <string>Sax Sect. 2</string>
+                <string>Horny Sax</string>
+                <string>R&amp;B TriLead</string>
+                <string>PeakArpSine</string>
+                <string>Theramax</string>
+                <string>FS Sqr Lead</string>
+                <string>Dawn Of Pan</string>
+                <string>Sqr Diamond</string>
+                <string>FS SoftLead</string>
+                <string>Mid Saw Ld</string>
+                <string>FS ResoLead</string>
+                <string>Dig-n-Duke</string>
+                <string>Modulated Ld</string>
+                <string>Waspy Lead</string>
+                <string>Mew Lead</string>
+                <string>Violin Lead</string>
+                <string>Oscillo Lead</string>
+                <string>JP Saw Lead</string>
+                <string>MG Sqr Lead</string>
+                <string>Tristar</string>
+                <string>Mod Lead</string>
+                <string>Digital Ld</string>
+                <string>Chubby Lead</string>
+                <string>Sneaky Leady</string>
+                <string>SoloNzPeaker</string>
+                <string>Clone Zone</string>
+                <string>Legato Tkno</string>
+                <string>DC Triangle</string>
+                <string>Sqr-Seqence</string>
+                <string>Griggley</string>
+                <string>Pure Square</string>
+                <string>Legato Saw</string>
+                <string>Lone Prophat</string>
+                <string>Porta SoloLd</string>
+                <string>FS Saw Ld 1</string>
+                <string>FS Saw Ld 2</string>
+                <string>Wind Syn Ld</string>
+                <string>Dual Profs</string>
+                <string>Gwyo Press</string>
+                <string>Q DualSaws</string>
+                <string>Mogulator Ld</string>
+                <string>DirtyVoltage</string>
+                <string>Clean?</string>
+                <string>Distortion</string>
+                <string>FS Syn Ld</string>
+                <string>SynLead 0322</string>
+                <string>Digital Ld 2</string>
+                <string>X-Sink Delay</string>
+                <string>Noized Lead</string>
+                <string>Space Lead</string>
+                <string>Destroyed Ld</string>
+                <string>SyncModulate</string>
+                <string>Sync Tank</string>
+                <string>Squareheads</string>
+                <string>Distorted MG</string>
+                <string>SonicVampire</string>
+                <string>Blue Meanie</string>
+                <string>Defcon</string>
+                <string>Stimulation</string>
+                <string>Sub Hit</string>
+                <string>Blue Ice</string>
+                <string>.16 Orch</string>
+                <string>In da Cave</string>
+                <string>BlastfrmPast</string>
+                <string>Smear Hit 1</string>
+                <string>Smear Hit 2</string>
+                <string>Good Old Hit</string>
+                <string>Mix Hit 1</string>
+                <string>Philly Hit</string>
+                <string>Mojo Man</string>
+                <string>Cheezy Movie</string>
+                <string>Mix Hit 2</string>
+                <string>Lo-Fi Hit</string>
+                <string>2ble Action</string>
+                <string>Funk Chank</string>
+                <string>Venus</string>
+                <string>AluminmWires</string>
+                <string>Raven Chord</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -51,6 +706,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>67</integer>
+            <key>Patches</key>
+            <array>
+                <string>HPF Sweep</string>
+                <string>Moon Synth</string>
+                <string>DelyResoSaws</string>
+                <string>R-Trance</string>
+                <string>Alfa Retro</string>
+                <string>Nu Hoover</string>
+                <string>Hoovercraft</string>
+                <string>Braatz...</string>
+                <string>AllinOneRiff</string>
+                <string>YZ Again</string>
+                <string>Flazzy Lead</string>
+                <string>Coffee Bee</string>
+                <string>Sweet House</string>
+                <string>Alien Bubble</string>
+                <string>LowFreqHit</string>
+                <string>Loonacy</string>
+                <string>Periscope</string>
+                <string>Electrostars</string>
+                <string>Going Mad!</string>
+                <string>LoFiSequence</string>
+                <string>DreamInColor</string>
+                <string>MelodicDrums</string>
+                <string>Techno Snips</string>
+                <string>TB Wah</string>
+                <string>Waving TB303</string>
+                <string>Digi Seq</string>
+                <string>Seq Saw</string>
+                <string>Reso Seq Saw</string>
+                <string>DetuneSeqSaw</string>
+                <string>Technotribe</string>
+                <string>MetalVoxBox</string>
+                <string>Teethy Grit</string>
+                <string>Repertition</string>
+                <string>Jucy Saw</string>
+                <string>Cue Tip</string>
+                <string>TB-Sequence</string>
+                <string>Europe Xpres</string>
+                <string>Squeepy</string>
+                <string>Atmorave</string>
+                <string>DOC Stack</string>
+                <string>Sweep Lead</string>
+                <string>Digitaless</string>
+                <string>Flip Pad</string>
+                <string>Short Detune</string>
+                <string>forSequence</string>
+                <string>Memory Pluck</string>
+                <string>Metalic Bass</string>
+                <string>Aqua</string>
+                <string>Big Planet</string>
+                <string>Wet Atax</string>
+                <string>Houze Clavi</string>
+                <string>SuperSawSlow</string>
+                <string>TranceSaws</string>
+                <string>Trancy Synth</string>
+                <string>Saw Stack</string>
+                <string>Frgile Saws</string>
+                <string>Steamed Sawz</string>
+                <string>RAVtune</string>
+                <string>Bustranza</string>
+                <string>AftTch Ji-n</string>
+                <string>JP OctAttack</string>
+                <string>Oct Unison</string>
+                <string>Xtatic</string>
+                <string>Dirty Combo</string>
+                <string>FM’s Attack</string>
+                <string>Impression</string>
+                <string>Digi-vox Syn</string>
+                <string>Fairy Factor</string>
+                <string>Tempest</string>
+                <string>X-Racer</string>
+                <string>TB Booster</string>
+                <string>Syn-Orch/Mod</string>
+                <string>Pressyn</string>
+                <string>High Five</string>
+                <string>4DaCommonMan</string>
+                <string>Orgaenia</string>
+                <string>Sleeper</string>
+                <string>Sugar Synth</string>
+                <string>Ice Palace</string>
+                <string>Story Harp</string>
+                <string>LostParadise</string>
+                <string>Magnetic 5th</string>
+                <string>Jazz Doos</string>
+                <string>Beat Vox</string>
+                <string>Scat Beats</string>
+                <string>Choir Aahs 1</string>
+                <string>Choir Aahs 2</string>
+                <string>ChoirOoh/Aft</string>
+                <string>Angels Choir</string>
+                <string>Angelique</string>
+                <string>Gospel Oohs</string>
+                <string>Uhmmm</string>
+                <string>Aah Vox</string>
+                <string>Morning Star</string>
+                <string>Syn Opera</string>
+                <string>BeautifulOne</string>
+                <string>Ooze</string>
+                <string>Aerial Choir</string>
+                <string>3D Vox</string>
+                <string>FS Sqr Pad</string>
+                <string>FS Hollow</string>
+                <string>Silk Pad</string>
+                <string>WarmReso Pad</string>
+                <string>FS Soft Pad</string>
+                <string>Soft Breeze</string>
+                <string>JP Strings 1</string>
+                <string>JP Strings 2</string>
+                <string>FS Syn Str</string>
+                <string>Syn Strings</string>
+                <string>OB Slow Str</string>
+                <string>Super SynStr</string>
+                <string>Strings Pad</string>
+                <string>R&amp;B SoftPad</string>
+                <string>Reso Pad</string>
+                <string>Phat Pad</string>
+                <string>FS PhaserPad</string>
+                <string>Mystic Str</string>
+                <string>Glass Organ</string>
+                <string>Wind Pad</string>
+                <string>Combination</string>
+                <string>HumanKindnes</string>
+                <string>Atmospherics</string>
+                <string>Terra Nostra</string>
+                <string>OB Aaahs</string>
+                <string>Vulcano Pad</string>
+                <string>Cloud #9</string>
+                <string>Lostscapes</string>
+                <string>Organic Pad</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -59,6 +845,7 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>68</integer>
+
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -67,7 +854,138 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>69</integer>
-		</dict>
+            <key>Patches</key>
+            <array>
+                <string>ConcertGrand</string>
+                <string>Hall Concert</string>
+                <string>Bright Tune</string>
+                <string>Mellow Tune</string>
+                <string>Back E-Grand</string>
+                <string>EP mkI</string>
+                <string>Stage EP</string>
+                <string>MKS20EnsemEP</string>
+                <string>UltimatGrand</string>
+                <string>X Pure Grand</string>
+                <string>Studio Grand</string>
+                <string>88ConcertPno</string>
+                <string>DryStudio88</string>
+                <string>First Choice</string>
+                <string>Rokkin' pF</string>
+                <string>Dark Grand</string>
+                <string>Piano Oz</string>
+                <string>Grand Hall</string>
+                <string>X Piano +Str</string>
+                <string>Arie Piano</string>
+                <string>Cicada Piano</string>
+                <string>Clare Voyent</string>
+                <string>X Piano +Pad</string>
+                <string>X Piano +Vox</string>
+                <string>FX Piano</string>
+                <string>AmbientPiano</string>
+                <string>Tre EP</string>
+                <string>Stage Phazer</string>
+                <string>StageCabinet</string>
+                <string>AMP EP</string>
+                <string>VelPanWurly</string>
+                <string>Mr.AXXE</string>
+                <string>1983 EP</string>
+                <string>EP Stack</string>
+                <string>EP Belle</string>
+                <string>Chocolate EP</string>
+                <string>Abstract EP</string>
+                <string>Ringy EP</string>
+                <string>Hipchord</string>
+                <string>Snappy Clav</string>
+                <string>Over-D6</string>
+                <string>CoupleHarpsi</string>
+                <string>HimalayaThaw</string>
+                <string>Ballad Bells</string>
+                <string>Bell Monitor</string>
+                <string>SideBandBell</string>
+                <string>SBF Saw Bell</string>
+                <string>TubyRuesday</string>
+                <string>Music Box 2</string>
+                <string>AirPluck</string>
+                <string>Airie Vibez</string>
+                <string>Ringy Vibes</string>
+                <string>50`SteelDrms</string>
+                <string>VKHold4Speed</string>
+                <string>X Perc Organ</string>
+                <string>Rocky Organ</string>
+                <string>Purple Organ</string>
+                <string>Phono Organ</string>
+                <string>Mid Pipe Org</string>
+                <string>ParisRomance</string>
+                <string>La Seine</string>
+                <string>VntgAccrdion</string>
+                <string>Oktoberfest</string>
+                <string>NaturalNylon</string>
+                <string>Nylon Gtr VS</string>
+                <string>Double Nylon</string>
+                <string>Mellow Nylon</string>
+                <string>FlamencoGt X</string>
+                <string>El Toro Gtr</string>
+                <string>Dyna Nylon</string>
+                <string>NylonGt /HO</string>
+                <string>Nylon 4way</string>
+                <string>Nyl-Intro</string>
+                <string>Nylon Dreams</string>
+                <string>With Love</string>
+                <string>Amore Story</string>
+                <string>Interlude</string>
+                <string>Sweet Tears</string>
+                <string>WithALtlHelp</string>
+                <string>Double Track</string>
+                <string>Mystic Gtr</string>
+                <string>Cut Thru Wah</string>
+                <string>GuitaratiuG</string>
+                <string>WahGt Riff</string>
+                <string>Larsen /Aft</string>
+                <string>Darmstrat X</string>
+                <string>Rockin’ Dly</string>
+                <string>DistGt Mt</string>
+                <string>GTR Heroes</string>
+                <string>X Mute Bass</string>
+                <string>Nu Finger Bs</string>
+                <string>Soulfinger</string>
+                <string>X Finger Bs1</string>
+                <string>StickyOctave</string>
+                <string>Bass &amp; Amp</string>
+                <string>Chorus Bass</string>
+                <string>X 5String Bs</string>
+                <string>6-Pack Stick</string>
+                <string>Nu Pick Bass</string>
+                <string>Comp Picker</string>
+                <string>X Finger Bs2</string>
+                <string>X Picked Bs</string>
+                <string>Mutation</string>
+                <string>X Slap Bass</string>
+                <string>Fuzz Mute</string>
+                <string>Doubled Bass</string>
+                <string>NewAge Frtls</string>
+                <string>Powerline</string>
+                <string>Reso SynBass</string>
+                <string>Synth Bassic</string>
+                <string>Down 4 It</string>
+                <string>Glider Bass</string>
+                <string>Fundamental</string>
+                <string>Artus Bass</string>
+                <string>Sweet &amp; Low</string>
+                <string>Change It</string>
+                <string>the ONE</string>
+                <string>ChoruSE ONE</string>
+                <string>Eyes Bass</string>
+                <string>Secret Bass</string>
+                <string>Base BoX</string>
+                <string>Nu RnB Bass</string>
+                <string>D n’ Bass</string>
+                <string>DnB Bass 1</string>
+                <string>Fat Bottom</string>
+                <string>Deep S-E</string>
+                <string>Nu Bace</string>
+                <string>Mini Like!</string>
+            </array>
+        </dict>
 		<dict>
 			<key>Name</key>
 			<string>Preset G</string>
@@ -75,6 +993,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>70</integer>
+            <key>Patches</key>
+            <array>
+                <string>Da Chronic</string>
+                <string>Virtual RnBs</string>
+                <string>Not a Bass</string>
+                <string>Nu RnB Saw 1</string>
+                <string>Nu RnB Saw 2</string>
+                <string>Buzzy Bs</string>
+                <string>SBF Saw Bs</string>
+                <string>Party Bass</string>
+                <string>Tornrubber</string>
+                <string>Drop Bass</string>
+                <string>Filament</string>
+                <string>Dust Bass</string>
+                <string>Mr. Nasty</string>
+                <string>Bass Drive</string>
+                <string>Underneath</string>
+                <string>Dirt &amp; Grime</string>
+                <string>Down &amp; Dirty</string>
+                <string>SubOscar</string>
+                <string>Full Strings</string>
+                <string>X StrSection</string>
+                <string>Oct Strings</string>
+                <string>Sahara Str</string>
+                <string>Random Mood</string>
+                <string>X Hall Str</string>
+                <string>Strings Flow</string>
+                <string>Biggie Bows</string>
+                <string>Staccato VS</string>
+                <string>So Staccato</string>
+                <string>Pizz’Stac VS</string>
+                <string>Mellow Tron</string>
+                <string>Moody Tron</string>
+                <string>Tronic Str</string>
+                <string>Machine Str</string>
+                <string>Symphonika</string>
+                <string>Pop Orch</string>
+                <string>Contemp’Orch</string>
+                <string>Orange Skin</string>
+                <string>Tutti</string>
+                <string>Brass Ditt</string>
+                <string>Housechord</string>
+                <string>Mod Chord</string>
+                <string>Dance Steam</string>
+                <string>Disto Stab !</string>
+                <string>Fairy Flute</string>
+                <string>Chiffed Toot</string>
+                <string>Hop Flute</string>
+                <string>HimalayaPipe</string>
+                <string>X Brs Sect 1</string>
+                <string>Pop Stak Brs</string>
+                <string>X Brs Sect 2</string>
+                <string>Pop Brs wAtk</string>
+                <string>Hybrid Brass</string>
+                <string>Nu Stab Brs</string>
+                <string>Heavy Brs 1</string>
+                <string>Heavy Brs 2</string>
+                <string>Wonder Brass</string>
+                <string>Pop Brs Sfz</string>
+                <string>Pop Brs Stac</string>
+                <string>Brass Fall /</string>
+                <string>X-Saw Brass1</string>
+                <string>JP8000 Brass</string>
+                <string>X-Saw Brass2</string>
+                <string>Bend SynBrs</string>
+                <string>Sax Heavy</string>
+                <string>FXM Alto Sax</string>
+                <string>Simply Nasty</string>
+                <string>Deep Wine</string>
+                <string>Bon Voyage</string>
+                <string>Xpress Lead</string>
+                <string>BodyElectric</string>
+                <string>Classic Lead</string>
+                <string>Optik’Synth</string>
+                <string>Feat Lead</string>
+                <string>X Sync Mod</string>
+                <string>SBF Lead</string>
+                <string>Hard Sync</string>
+                <string>Rezo Sync</string>
+                <string>Wire Sync</string>
+                <string>Distro FXM</string>
+                <string>Epic Lead</string>
+                <string>Crumble Syn</string>
+                <string>SlippingSaws</string>
+                <string>Bag Lead</string>
+                <string>Dirty Saw</string>
+                <string>Wezcoast</string>
+                <string>X-Saw Lead</string>
+                <string>ActualAnalog</string>
+                <string>SBF Reso</string>
+                <string>SliCed Lead</string>
+                <string>Synthi Fizz</string>
+                <string>Mini Growl</string>
+                <string>Jupiter Lead</string>
+                <string>X-Pulse Lead</string>
+                <string>Jupi Square</string>
+                <string>TriStac Lead</string>
+                <string>Modular Lead</string>
+                <string>Sinetific</string>
+                <string>Dirty D/A</string>
+                <string>EuronalSynth</string>
+                <string>Xtrem Sine</string>
+                <string>Killerbeez</string>
+                <string>Freeze Synth</string>
+                <string>JamPacked!</string>
+                <string>SawStac Chd</string>
+                <string>Trancepire</string>
+                <string>Acid Lead</string>
+                <string>Tranceformer</string>
+                <string>Anadroid</string>
+                <string>Shroomy</string>
+                <string>SBF Nozer</string>
+                <string>Voxulizer</string>
+                <string>Wired Rez</string>
+                <string>Noize R us</string>
+                <string>Inner Voices</string>
+                <string>Beep Melodie</string>
+                <string>Alpha Hoover</string>
+                <string>Steel Wire</string>
+                <string>Rav-i-Toid</string>
+                <string>Rez Therapy</string>
+                <string>Ivan’s</string>
+                <string>Morpher</string>
+                <string>StellarTreck</string>
+                <string>Tekno Tone</string>
+                <string>Generator</string>
+                <string>ARP x Race</string>
+                <string>DSP Chaos</string>
+                <string>Phraserblade</string>
+                <string>Dancefloor</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -83,6 +1132,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>71</integer>
+            <key>Patches</key>
+            <array>
+                <string>Minor Thirds</string>
+                <string>Strobe X</string>
+                <string>Orbiting</string>
+                <string>FX World</string>
+                <string>Mr. Fourier</string>
+                <string>Nu Trance X</string>
+                <string>eXisDance</string>
+                <string>Are U ready?</string>
+                <string>Minty Fresh</string>
+                <string>Spectrums</string>
+                <string>Shape of X</string>
+                <string>Auto 5thSaws</string>
+                <string>Strobot</string>
+                <string>Dreamswirl</string>
+                <string>Galaxadin</string>
+                <string>Welcome2X</string>
+                <string>Space &amp; Time</string>
+                <string>Cross Talk</string>
+                <string>Lava Flows</string>
+                <string>Steppin Faze</string>
+                <string>Reanimation</string>
+                <string>VoX Chopper</string>
+                <string>SquareSphere</string>
+                <string>Auto Sync</string>
+                <string>Vocastic</string>
+                <string>Bending Logo</string>
+                <string>SolarPleXus</string>
+                <string>Scare</string>
+                <string>Chaoism</string>
+                <string>Hillside</string>
+                <string>Alien Voice</string>
+                <string>What What?</string>
+                <string>Beyond Here</string>
+                <string>Mod Scanner</string>
+                <string>Gasp</string>
+                <string>Neverville</string>
+                <string>Landing Pad</string>
+                <string>Celebrated</string>
+                <string>ResoSweep Up</string>
+                <string>The VorteX</string>
+                <string>Magic Wave</string>
+                <string>Shangri-La</string>
+                <string>CerealKiller</string>
+                <string>DigimaX</string>
+                <string>Trancy X</string>
+                <string>X Sweep Saws</string>
+                <string>X-Trance</string>
+                <string>JP-8000 Saws</string>
+                <string>X Super Saws</string>
+                <string>Exhale</string>
+                <string>SBF Voices</string>
+                <string>Stadium SBF</string>
+                <string>Master X</string>
+                <string>X-panda</string>
+                <string>TDreamTouch</string>
+                <string>Smooth Synth</string>
+                <string>Stereotype</string>
+                <string>Saw Keystep</string>
+                <string>4mant Cycle</string>
+                <string>Trance Sweep</string>
+                <string>Modular</string>
+                <string>Triple X</string>
+                <string>Angel Pipes</string>
+                <string>Vint Clavier</string>
+                <string>Wired Synth</string>
+                <string>Nu Romance</string>
+                <string>Survivoz</string>
+                <string>Ring Worldz</string>
+                <string>Mashed!? :0)</string>
+                <string>Saturn Siren</string>
+                <string>Side Band X</string>
+                <string>Mashy Scene</string>
+                <string>Spr SideBand</string>
+                <string>Digitvox</string>
+                <string>Oral eXam</string>
+                <string>Timeline</string>
+                <string>Whisper Pad</string>
+                <string>Orchipad</string>
+                <string>Visionary</string>
+                <string>Rave Stringy</string>
+                <string>InfinitePhsr</string>
+                <string>Jupiter 2004</string>
+                <string>Light Phaser</string>
+                <string>Life-on</string>
+                <string>Polar Morn</string>
+                <string>Saturn Rings</string>
+                <string>Ooh La La</string>
+                <string>Flying X</string>
+                <string>Motion Pad</string>
+                <string>Mash Pad</string>
+                <string>Xtragalactic</string>
+                <string>Morph Filter</string>
+                <string>TrnsSweepPad</string>
+                <string>Follow</string>
+                <string>Jupiter-X</string>
+                <string>Riven Pad</string>
+                <string>Consolament</string>
+                <string>Spacious Pad</string>
+                <string>JD Pop Pad</string>
+                <string>Silhouette</string>
+                <string>JP-8 Phase</string>
+                <string>Nu Epic Pad</string>
+                <string>Forever</string>
+                <string>Flange Dream</string>
+                <string>Guild Vox</string>
+                <string>5th Pad X</string>
+                <string>Evolution X</string>
+                <string>Chariots</string>
+                <string>Trevor’s Pad</string>
+                <string>Nu Pad</string>
+                <string>Fantomas Pad</string>
+                <string>Film Cue</string>
+                <string>Choral Sweep</string>
+                <string>Paradise</string>
+                <string>Sad ceremony</string>
+                <string>Lost Voices</string>
+                <string>Talk 2 Me</string>
+                <string>Pearly Harp</string>
+                <string>Nylon Harp</string>
+                <string>Skydiver</string>
+                <string>Unpluck’d</string>
+                <string>Ethno Plucks</string>
+                <string>SaraswatiRvr</string>
+                <string>Drone X</string>
+                <string>Lounge Kit</string>
+                <string>Gospel Trio</string>
+                <string>xcultural</string>
+                <string>When I’m 64</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -91,6 +1271,137 @@
 			<integer>87</integer>
 			<key>LSB</key>
 			<integer>72</integer>
+            <key>Patches</key>
+            <array>
+                <string>Grand X</string>
+                <string>Punch Piano</string>
+                <string>AbandonedPno</string>
+                <string>Ballad 88</string>
+                <string>Cosmo Grand</string>
+                <string>Crossed EP</string>
+                <string>Dry Suitcase</string>
+                <string>Chuk EP</string>
+                <string>FXM EP</string>
+                <string>Bumpy EP</string>
+                <string>Organic FM</string>
+                <string>Simply Wurly</string>
+                <string>VintageClav</string>
+                <string>Clockworx V1</string>
+                <string>Noisemaker</string>
+                <string>Organ Oz</string>
+                <string>Vitamin B</string>
+                <string>Chorusd C</string>
+                <string>B Keyclick</string>
+                <string>Split Bars</string>
+                <string>MultiFunk</string>
+                <string>SmokeyWater</string>
+                <string>Transistor</string>
+                <string>R&amp;Bacoustic</string>
+                <string>Surf Gtr</string>
+                <string>FunkyCountry</string>
+                <string>PedalSteel</string>
+                <string>Strat-Egic</string>
+                <string>SmoothDrive</string>
+                <string>BluesTubes</string>
+                <string>Capt.Fingerz</string>
+                <string>ChunkyCrunch</string>
+                <string>Guitar Rip</string>
+                <string>RockDriver</string>
+                <string>Filter Slap</string>
+                <string>PowerUp Bass</string>
+                <string>Plastic3Bass</string>
+                <string>Matrix Bass</string>
+                <string>Big Pedal</string>
+                <string>DawgBass</string>
+                <string>SF Bass</string>
+                <string>Deep Funk Bs</string>
+                <string>Sqr Pressure</string>
+                <string>House Bass</string>
+                <string>String Exp</string>
+                <string>Flap Strings</string>
+                <string>70`s TV Show</string>
+                <string>Dynam`Orch</string>
+                <string>HollywdBrass</string>
+                <string>Full Monty</string>
+                <string>Hero`s Theme</string>
+                <string>MultiHits</string>
+                <string>Stab Dance</string>
+                <string>ElectroTango</string>
+                <string>Power of Pan</string>
+                <string>FantomAxxe</string>
+                <string>Talking Mess</string>
+                <string>DT Lead</string>
+                <string>No Fidelity</string>
+                <string>Razid Lead</string>
+                <string>Tricycle</string>
+                <string>Phuture Saw</string>
+                <string>Intense Lead</string>
+                <string>Shining</string>
+                <string>Fat Eurolead</string>
+                <string>Wave-o-Shapo</string>
+                <string>DC Sidebands</string>
+                <string>SeeAttic</string>
+                <string>Retro Mono</string>
+                <string>Vintage Duck</string>
+                <string>LivinginSine</string>
+                <string>SoloSaber 2</string>
+                <string>Lethargy</string>
+                <string>Soul Lead</string>
+                <string>Vari-D Solo</string>
+                <string>Chifferkla4</string>
+                <string>Sawdust</string>
+                <string>Phasing Arp</string>
+                <string>Acid Empire</string>
+                <string>Classic TB</string>
+                <string>Techno Wave</string>
+                <string>Transylvania</string>
+                <string>Ventil8or</string>
+                <string>Encounter</string>
+                <string>Wah-Wah-Wah</string>
+                <string>Moby'sReveng</string>
+                <string>FiltredDream</string>
+                <string>Space Slice</string>
+                <string>Art of Trnce</string>
+                <string>Vocopanner</string>
+                <string>Corrugated</string>
+                <string>MightyPulses</string>
+                <string>Magic Rays</string>
+                <string>CosmicVoices</string>
+                <string>TargetX</string>
+                <string>Mean Martian</string>
+                <string>Transmission</string>
+                <string>Lektromachin</string>
+                <string>AlienRadio</string>
+                <string>SacredSecret</string>
+                <string>Angelbreeze</string>
+                <string>Dream Viva</string>
+                <string>MorningRises</string>
+                <string>Dig-A-Logue</string>
+                <string>ContactSport</string>
+                <string>Lunar Dance</string>
+                <string>Cassiopeia</string>
+                <string>PhazeSinger</string>
+                <string>EvocativePad</string>
+                <string>Panta Rhei</string>
+                <string>Thats Epic!</string>
+                <string>Holy Breath</string>
+                <string>Microcosm</string>
+                <string>Magesty Pad</string>
+                <string>Native Pad</string>
+                <string>Swap Pad</string>
+                <string>Alphaphase</string>
+                <string>ThickCarpet</string>
+                <string>Starchild</string>
+                <string>Silky Pad</string>
+                <string>Sineshine</string>
+                <string>Careless Vox</string>
+                <string>SiSi Choir</string>
+                <string>FX Orchestra</string>
+                <string>AnalogMotion</string>
+                <string>InstaGroove</string>
+                <string>Radio Beats</string>
+                <string>Auto RnB</string>
+            </array>
 		</dict>
 		<dict>
 			<key>Name</key>
