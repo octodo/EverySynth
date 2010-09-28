@@ -58,14 +58,14 @@ typedef enum
 	The userdata field is the CAUGuiMan who then determines which Control object has to take action and passes the reference back to the handler who distributes the work.
 			
 */
-extern "C" pascal OSStatus CAUGuiControlHandler ( EventHandlerCallRef, EventRef, void*  );
+extern pascal OSStatus CAUGuiControlHandler ( EventHandlerCallRef, EventRef, void*  );
 
 /** \brief The timer callback
 
 	this function gets called by an CarbonRunLoopTimer. It gets passed the CAUGuiMan who then calls each Control object's idle() function subsequently.
 			
 */
-extern "C" void TimerProc ( EventLoopTimerRef inTimer, void *inUserData );
+extern void TimerProc ( EventLoopTimerRef inTimer, void *inUserData );
 
 class CAUGuiCtrl;
 

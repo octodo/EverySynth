@@ -175,7 +175,7 @@ void CAUGuiButton::mouseDown(Point *P, bool with_option, bool with_shift)
 	
 	}
 	
-	if ( userProcedure != NULL )
+	if ( userProcedure != NULL && mode != kPushButton )
 	{
 		userProcedure ( value, this, userData );
 	
@@ -217,6 +217,12 @@ void CAUGuiButton::mouseUp(Point *P, bool with_option, bool with_shift)
 		default:
 			Draw1Control ( carbonControl );
 			break;
+	}
+
+	if ( userProcedure != NULL && mode == kPushButton )
+	{
+		userProcedure ( 0, this, userData );
+        
 	}
     
     Draw1Control(getCarbonControl());
