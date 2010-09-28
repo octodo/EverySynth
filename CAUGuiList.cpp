@@ -20,6 +20,10 @@ CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
     itemNames = NULL;
     numColumns = col;
     itemPadding = 5;
+    userProc = NULL;
+    userData = NULL;
+    currentPage = 0;
+    showPageButtons = false;
 }
 
 CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
@@ -33,6 +37,37 @@ CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
     itemNames = NULL;
     numColumns = col;
     itemPadding = 5;
+    userProc = NULL;
+    userData = NULL;
+    currentPage = 0;
+    showPageButtons = false;
+}
+
+void CAUGuiList::selectPage(int page) {
+	ControlRef carbonControl = getCarbonControl();
+    
+	UInt32 value = 0;
+	
+	if ( carbonControl != NULL )
+		value = GetControl32BitValue( carbonControl );
+
+    int item_height = (int)font_size + 2 * itemPadding;
+    int num_items_per_column = where.h / item_height;
+    int num_items_per_page = num_items_per_column * numColumns;
+
+    if (page == -1) {
+        currentPage = value / num_items_per_page; 
+    }
+    else {
+        if (page > (getRange() / num_items_per_page)) {
+            return;
+        }
+        else {
+            currentPage = page;
+        }
+    }
+    
+    Draw1Control(carbonControl);
 }
 
 void CAUGuiList::mouseDown(Point *P, bool, bool)
@@ -48,14 +83,13 @@ void CAUGuiList::mouseDown(Point *P, bool, bool)
     int item_width = where.w / numColumns;
     int num_items_per_column = where.h / item_height;
     int num_items_per_page = num_items_per_column * numColumns;
-    int current_page = value / num_items_per_page;
 
-    int item = num_items_per_page * current_page + P->v / item_height + (P->h / item_width) * num_items_per_column;
+    int item = num_items_per_page * currentPage + P->v / item_height + (P->h / item_width) * num_items_per_column;
     
     SetControl32BitValue(carbonControl, item);
 
 	Draw1Control(carbonControl);
-    
+
     if (userProc != NULL) {
         userProc(item, this, userData);
     }
@@ -89,28 +123,23 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
     CGContextSelectFont(context, font_name, font_size, kCGEncodingMacRoman);
     
     getForeBounds()->to(&bounds, portHeight);
-    // Determine dimensions
 
-    //CGContextSetTextDrawingMode(context , kCGTextInvisible);
-    //CGContextShowTextAtPoint(context, 0, 0, "TEST\n", 5);
-    //CGPoint pt = CGContextGetTextPosition(context);
-    //int item_height = pt.y;
+    // Determine dimensions
     int item_height = (int)font_size + 2 * itemPadding;
     int item_width = bounds.size.width / numColumns;
     int approx_font_height = (int)font_size;
     
     int num_items_per_column = bounds.size.height / item_height;
     int num_items_per_page = num_items_per_column * numColumns;
-    int current_page = value / num_items_per_page;
     
     CGContextSetRGBFillColor( context, col_red, col_green, col_blue, col_alpha );
     CGContextSetRGBStrokeColor( context, col_red, col_green, col_blue, col_alpha );
 
     CGContextSetTextDrawingMode ( context, kCGTextFill );
     
-    for (int i=0; (i < num_items_per_page) && (current_page*num_items_per_page+i < getRange()); i++) {
+    for (int i=0; (i < num_items_per_page) && (currentPage * num_items_per_page + i <= getRange()); i++) {
         char text[32];
-        int nItem = current_page * num_items_per_page + i;
+        int nItem = currentPage * num_items_per_page + i;
         
         CGRect itemRect;
         itemRect.origin.x = bounds.origin.x + (i / num_items_per_column) * item_width;
@@ -128,7 +157,7 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
             sprintf(text, "%d", nItem);
         }
         
-        if (value == nItem) {
+        if ((int)value == nItem) {
             CGContextSetRGBFillColor(context, 0,0,0,1);
             CGContextFillRect(context, itemRect);
             CGContextSetRGBFillColor(context, col_red, col_green, col_blue, col_alpha);

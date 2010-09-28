@@ -19,6 +19,7 @@ CAUGuiRadioArray::CAUGuiRadioArray(CAUGuiMan * theChief,
     foreground = theForeground;
     background = theBackground;
     userProc = NULL;
+    itemNames = NULL;
 }
 
 void CAUGuiRadioArray::mouseDown(Point * P, bool, bool)
@@ -62,7 +63,12 @@ void CAUGuiRadioArray::draw(CGContextRef context, UInt32 portHeight)
         CGRect itemBounds;
         where.to(&itemBounds, portHeight);
         
-        sprintf(text, "%d", i+1);
+        if (itemNames != NULL && CFArrayGetCount(itemNames) > i) {
+            CFStringGetBytes((CFStringRef)CFArrayGetValueAtIndex(itemNames, i), CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
+        }
+        else {
+            sprintf(text, "%d", i+1);
+        }
         
         CGContextSelectFont(context, font_name, font_size, kCGEncodingMacRoman);
         

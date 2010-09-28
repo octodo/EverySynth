@@ -63,8 +63,13 @@ public:
     
 private:
     CAAUParameter ** channelParams;
-    
     CAUGuiMan * theGui;
+    
+    // Controls
+    CAUGuiPane * paneBackground;
+    
+    CAUGuiList * listDevices;
+    
     CAUGuiLayeredPane * channelPane;
     CAUGuiLabeledButton * buttonDeviceType;
     CAUGuiRadioArray * channelButtonArray;
@@ -72,7 +77,8 @@ private:
     CAUGuiList ** bankLists;
     CAUGuiList ** patchLists;
     CAUGuiDisplay ** bankMSBs;
-    CAUGuiDisplay ** bankLSBs;    
+    CAUGuiDisplay ** bankLSBs;
+    CAUGuiRadioArray ** pageButtons;
     
     DeviceDB * devDb;
     MenuRef deviceTypePopup;

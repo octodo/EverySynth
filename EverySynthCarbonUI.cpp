@@ -22,6 +22,8 @@
 
 COMPONENT_ENTRY(EverySynthCarbonUI)
 
+static const CFStringRef kPageLabels[] = { CFSTR("1-64"), CFSTR("65-128") };
+
 void textProc_Volume(UInt32 value, char * text, void * userData)
 {
     sprintf(text, "%d", value);
@@ -40,6 +42,11 @@ void buttonProc_DeviceType(UInt32 value, CAUGuiButton* from, void* userData)
 void listProc_BankSelect(UInt32 value, CAUGuiList* from, void * userData)
 {
     ((EverySynthCarbonUI*)userData)->bankSelect(value);
+}
+
+void radioArrayProc_PageSelect(UInt32 value, CAUGuiRadioArray* from, void * userData)
+{
+    ((CAUGuiList*)userData)->selectPage((int)value);
 }
 
 OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
@@ -114,7 +121,7 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
 	where.set(0, 0, width, height);
 	
     // Background pane
-	CAUGuiPane* paneBackground = new CAUGuiPane(theGui, &where, graBackground);
+	paneBackground = new CAUGuiPane(theGui, &where, graBackground);
 	theGui->addCtrl(paneBackground);
 	
     // DeviceType button
@@ -152,12 +159,12 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
     // Output Device
     where.set(14, 83, 229, 135);
 
-    CAUGuiList * deviceList = new CAUGuiList(theGui, paramOutputDevice, &where, graDeviceListBackground);
-    paneBackground->addCtrl(deviceList);
+    listDevices = new CAUGuiList(theGui, paramOutputDevice, &where, graDeviceListBackground);
+    paneBackground->addCtrl(listDevices);
     
     // Channel select buttons    
     where.set(264, 242, kNumChannels*24, 23);
-    channelButtonArray = new CAUGuiRadioArray(theGui, 9, &where, graChannelSelect, graDeviceType);
+    channelButtonArray = new CAUGuiRadioArray(theGui, 9, &where, graChannelSelect, NULL);
     channelButtonArray->setUserProc(radioArrayProc_ChannelSelect, this);
     paneBackground->addCtrl(channelButtonArray);
 
@@ -171,6 +178,7 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
     patchLists = new CAUGuiList*[kNumChannels];
     bankMSBs = new CAUGuiDisplay*[kNumChannels];
     bankLSBs = new CAUGuiDisplay*[kNumChannels];
+    pageButtons = new CAUGuiRadioArray*[kNumChannels];
     
     for (int channel=0; channel<kNumChannels; channel++) {
         
@@ -191,10 +199,17 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
         // Patch list
         where.set(180, 34, 461, 250);
         patchLists[channel] = new CAUGuiList(theGui, *CHANNEL_PARAMETER(kParam_MidiControlPatch_Patch, channel), &where, graPatchListBackground, 4);
-        patchLists[channel]->setFontSize(10.0);
+        patchLists[channel]->setFontSize(11.0);
         patchLists[channel]->setItemPadding(2);
         channelPane->addCtrl(patchLists[channel], channel);
-        
+
+        // Page buttons
+        where.set(547, 6, 96, 19);
+        pageButtons[channel] = new CAUGuiRadioArray(theGui, 2, &where, graPage, NULL);
+        pageButtons[channel]->setUserProc(radioArrayProc_PageSelect, patchLists[channel]);
+        pageButtons[channel]->setItemNames(CFArrayCreate(NULL, (const void**)kPageLabels, 2, NULL));
+        channelPane->addCtrl(pageButtons[channel], channel);
+                
         // Bank list
         where.set(15, 90, 140, 195);
         bankLists[channel] = new CAUGuiList(theGui, 2, &where, graBankListBackground);
@@ -227,10 +242,12 @@ void EverySynthCarbonUI::selectDevicePopup()
     
     Point pt;
     GetGlobalMouse(&pt);
-    
-    int result = PopUpMenuSelect(deviceTypePopup, pt.h, pt.v, CFArrayGetFirstIndexOfValue(deviceList, CFRangeMake(0, CFArrayGetCount(deviceList)), CFStringCreateWithCStringNoCopy(NULL, curDevice, 0, NULL)));
+
+    int result = PopUpMenuSelect(deviceTypePopup, pt.v, pt.h, CFArrayGetFirstIndexOfValue(deviceList, CFRangeMake(0, CFArrayGetCount(deviceList)), CFStringCreateWithCStringNoCopy(NULL, curDevice, 0, NULL)));
     result &= 0xFFFF;
-    printf("%d\n", result);
+    
+    if (result == 0)
+        return;
     
     char * newDevice = (char*)CFStringGetCStringPtr((CFStringRef)CFArrayGetValueAtIndex(deviceList, result-1), 0);
     AudioUnitSetProperty(mEditAudioUnit, kProperty_MidiDeviceType, kAudioUnitScope_Global, 0, newDevice, strlen(newDevice));
@@ -243,6 +260,7 @@ void EverySynthCarbonUI::selectDevicePopup()
     for (int i=0; i<kNumChannels; i++) {
         bankLists[i]->setItemNames(bankNames);
         bankLists[i]->setRange(CFArrayGetCount(bankNames));
+        Draw1Control(bankLists[i]->getCarbonControl());
         bankSelect(0, i);
     }
 }

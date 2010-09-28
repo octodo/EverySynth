@@ -55,7 +55,11 @@ public:
     
     void setItemPadding(int padding) { itemPadding = padding; }
     
+    void setShowPageButtons(bool val) { showPageButtons = val; }
+    
     void setUserProc(listUserProcedure theUserProc, void * theUserData) { userProc = theUserProc; userData = theUserData; }
+    
+    void selectPage(int page);
     
 private:
     
@@ -63,6 +67,9 @@ private:
     CFArrayRef itemNames;
     int numColumns;
     int itemPadding;
+    bool showPageButtons;
+    
+    int currentPage;
     
     listUserProcedure userProc;
     void * userData;
