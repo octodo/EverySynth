@@ -393,7 +393,7 @@ OSStatus EverySynth::HandleMidiEvent(UInt8 inStatus,
 	MIDIPacket * packet = MIDIPacketListInit(&pktlist);
     
 	for (int i=0; i<kNumChannels; i++) {
-		if (Parts().GetElement(i)->GetParameter(kParam_Active) == 0)
+		if (inStatus != 0x80 && Parts().GetElement(i)->GetParameter(kParam_Active) == 0)
 			continue;
 		
 		UInt8 data[] = {
