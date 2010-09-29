@@ -97,6 +97,9 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
     CAUGuiGraphic * graChannelSelect = new CAUGuiGraphic("channel_select.png", 2);
     theGui->addImage(graChannelSelect);
     
+    CAUGuiGraphic * graArrows = new CAUGuiGraphic("arrow.png", 2);
+    theGui->addImage(graArrows);
+    
     // Mixer channel strip
     CAUGuiGraphic * graMixerVolumeBackground = new CAUGuiGraphic("mixer_volume_background.png");
     theGui->addImage(graMixerVolumeBackground);
@@ -215,6 +218,7 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
         bankLists[channel] = new CAUGuiList(theGui, 2, &where, graBankListBackground);
         bankLists[channel]->setItemNames(devDb->getBankNames());
         bankLists[channel]->setUserProc(listProc_BankSelect, this);
+        bankLists[channel]->setPageButtons(graArrows);
         channelPane->addCtrl(bankLists[channel], channel);
     }
     
@@ -259,9 +263,9 @@ void EverySynthCarbonUI::selectDevicePopup()
     
     for (int i=0; i<kNumChannels; i++) {
         bankLists[i]->setItemNames(bankNames);
-        bankLists[i]->setRange(CFArrayGetCount(bankNames));
+        bankLists[i]->setRange(CFArrayGetCount(bankNames) - 1);
+        bankSelect(GetControl32BitValue(bankLists[i]->getCarbonControl()), i);
         Draw1Control(bankLists[i]->getCarbonControl());
-        bankSelect(0, i);
     }
 }
 

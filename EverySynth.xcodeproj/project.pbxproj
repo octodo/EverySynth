@@ -51,6 +51,7 @@
 		1B6B7D1A1250B63700BB151F /* bank_list_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B7D181250B63700BB151F /* bank_list_background.png */; };
 		1B6B7D1B1250B63700BB151F /* patch_list_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6B7D191250B63700BB151F /* patch_list_background.png */; };
 		1B6B7E221250C1A100BB151F /* Roland Fantom-X.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6B7E201250C19600BB151F /* Roland Fantom-X.plist */; };
+		1B807BB3125358E400E0EE66 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B807BB2125358E400E0EE66 /* arrow.png */; };
 		1BE198E6124E26F3006DE1BF /* CAUGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CD124E26F3006DE1BF /* CAUGui.cpp */; };
 		1BE198E7124E26F3006DE1BF /* CAUGui.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE198CE124E26F3006DE1BF /* CAUGui.h */; };
 		1BE198E8124E26F3006DE1BF /* CAUGuiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */; };
@@ -204,6 +205,7 @@
 		1B6B7D181250B63700BB151F /* bank_list_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_list_background.png; sourceTree = "<group>"; };
 		1B6B7D191250B63700BB151F /* patch_list_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patch_list_background.png; sourceTree = "<group>"; };
 		1B6B7E201250C19600BB151F /* Roland Fantom-X.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roland Fantom-X.plist"; sourceTree = "<group>"; };
+		1B807BB2125358E400E0EE66 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		1BE198CD124E26F3006DE1BF /* CAUGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGui.cpp; sourceTree = "<group>"; };
 		1BE198CE124E26F3006DE1BF /* CAUGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAUGui.h; sourceTree = "<group>"; };
 		1BE198CF124E26F3006DE1BF /* CAUGuiButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAUGuiButton.cpp; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 		1BE19947124E64BD006DE1BF /* gfx */ = {
 			isa = PBXGroup;
 			children = (
+				1B807BB2125358E400E0EE66 /* arrow.png */,
 				1B6B7D181250B63700BB151F /* bank_list_background.png */,
 				1B6B7D191250B63700BB151F /* patch_list_background.png */,
 				1B1CB89B124FD691002E4925 /* channel_select.png */,
@@ -688,6 +691,7 @@
 				1B1CB8A0124FD691002E4925 /* page.png in Resources */,
 				1B6B7D1A1250B63700BB151F /* bank_list_background.png in Resources */,
 				1B6B7D1B1250B63700BB151F /* patch_list_background.png in Resources */,
+				1B807BB3125358E400E0EE66 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

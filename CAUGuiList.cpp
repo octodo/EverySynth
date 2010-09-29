@@ -23,7 +23,7 @@ CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
     userProc = NULL;
     userData = NULL;
     currentPage = 0;
-    showPageButtons = false;
+    pageButtons = NULL;
 }
 
 CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
@@ -40,7 +40,7 @@ CAUGuiList::CAUGuiList(CAUGuiMan * theChief,
     userProc = NULL;
     userData = NULL;
     currentPage = 0;
-    showPageButtons = false;
+    pageButtons = NULL;
 }
 
 void CAUGuiList::selectPage(int page) {
@@ -78,6 +78,21 @@ void CAUGuiList::mouseDown(Point *P, bool, bool)
 	
 	if ( carbonControl != NULL )
 		value = GetControl32BitValue( carbonControl );
+    
+    if (pageButtons != NULL) {
+        CGPoint pt = CGPointMake(P->h, P->v);
+        eRect * bounds = getBounds();
+        CGRect upperRect = CGRectMake(bounds->w - itemPadding * 2 - pageButtons->getWidth(), 0, itemPadding * 2 + pageButtons->getWidth(), itemPadding * 2 + pageButtons->getHeight());
+        CGRect lowerRect = CGRectMake(upperRect.origin.x, bounds->h - (pageButtons->getHeight() + itemPadding * 2), upperRect.size.width, upperRect.size.height);
+        if (CGRectContainsPoint(upperRect, pt)) {
+            selectPage(currentPage - 1);
+            return;
+        }
+        else if (CGRectContainsPoint(lowerRect, pt)) {
+            selectPage(currentPage + 1);
+            return;
+        }
+    }
     
     int item_height = (int)font_size + 2 * itemPadding;
     int item_width = where.w / numColumns;
@@ -140,6 +155,7 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
     for (int i=0; (i < num_items_per_page) && (currentPage * num_items_per_page + i <= getRange()); i++) {
         char text[32];
         int nItem = currentPage * num_items_per_page + i;
+        CFIndex usedBufLen;
         
         CGRect itemRect;
         itemRect.origin.x = bounds.origin.x + (i / num_items_per_column) * item_width;
@@ -148,15 +164,17 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
         itemRect.size.height = item_height;
         
         if (itemNames != NULL && CFArrayGetCount(itemNames) > nItem) {
-            CFStringGetBytes((CFStringRef)CFArrayGetValueAtIndex(itemNames, nItem), CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
+            CFStringGetBytes((CFStringRef)CFArrayGetValueAtIndex(itemNames, nItem), CFRangeMake(0, 31), 0, (UInt8)'?', false, (UInt8*)text, 32, &usedBufLen);
+            text[usedBufLen] = '\0';
         }
         else if (isAUVPattached() && myParam.HasNamedParams()) {
-            CFStringGetBytes(myParam.GetParamName(nItem), CFRangeMake(0, 30), 0, 0x3F, false, (UInt8*)text, 31, NULL);
+            CFStringGetBytes(myParam.GetParamName(nItem), CFRangeMake(0, 31), 0, (UInt8)'?', false, (UInt8*)text, 32, &usedBufLen);
+            text[usedBufLen] = '\0';
         }
         else {
             sprintf(text, "%d", nItem);
         }
-        
+                
         if ((int)value == nItem) {
             CGContextSetRGBFillColor(context, 0,0,0,1);
             CGContextFillRect(context, itemRect);
@@ -164,5 +182,18 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
         }
         
 		CGContextShowTextAtPoint(context, itemRect.origin.x + 10, itemRect.origin.y + (itemRect.size.height / 2 - approx_font_height / 2), text, strlen(text));
+    }
+    
+    if (pageButtons != NULL && num_items_per_page < getRange()) {
+        //CGRect rect1 = CGRectMake(bounds.origin.x + bounds.size.width - pageButtons->getWidth() - itemPadding, bounds.origin.y + bounds.size.height - pageButtons->getHeight() - itemPadding, pageButtons->getWidth(), pageButtons->getHeight());
+        //CGRect rect2 = CGRectMake(bounds.origin.x + bounds.size.width - pageButtons->getWidth() - itemPadding, bounds.origin.y + itemPadding, pageButtons->getWidth(), pageButtons->getHeight());
+        eRect where;
+        eRect * myBounds = getBounds();
+        where.set(myBounds->x + myBounds->w - pageButtons->getWidth() - itemPadding, myBounds->y + itemPadding, pageButtons->getWidth(), pageButtons->getHeight());
+        pageButtons->draw(context, portHeight, &where, 0.f);
+        where.offset(0, myBounds->h - 2 * itemPadding - pageButtons->getHeight());
+        pageButtons->draw(context, portHeight, &where, 1.f);
+        //CGContextDrawImage(context, rect1, pageButtons->getImage());
+        //CGContextDrawImage(context, rect1, pageButtons->getImage());
     }
 }

@@ -55,7 +55,7 @@ public:
     
     void setItemPadding(int padding) { itemPadding = padding; }
     
-    void setShowPageButtons(bool val) { showPageButtons = val; }
+    void setPageButtons(CAUGuiGraphic * thePageButtons) { pageButtons = thePageButtons; }
     
     void setUserProc(listUserProcedure theUserProc, void * theUserData) { userProc = theUserProc; userData = theUserData; }
     
@@ -67,7 +67,7 @@ private:
     CFArrayRef itemNames;
     int numColumns;
     int itemPadding;
-    bool showPageButtons;
+    CAUGuiGraphic * pageButtons;
     
     int currentPage;
     
