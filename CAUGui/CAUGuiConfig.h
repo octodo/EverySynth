@@ -12,7 +12,7 @@
 
 #define AU_BUNDLE_IDENTIFIER "net.pmlk.audiounits.EverySynth"
 
-#define CAUGUI_FONT "Futura"
+#define CAUGUI_FONT "Futura Medium"
 
 #define CAUGUI_FONT_SIZE 11.0
 
