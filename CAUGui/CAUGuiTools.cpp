@@ -237,7 +237,7 @@ CAUGuiGraphic::CAUGuiGraphic ( char* pngFileName, UInt32 numFrames )
 	else	Frames = 1;
 	
 	int height = Frames;
-	
+    
 	if ( Image != NULL )
 		height = CGImageGetHeight (Image);
 	
@@ -268,12 +268,16 @@ void CAUGuiGraphic::draw( CGContextRef context, UInt32 portHeight, eRect* r, flo
 	// otherwise, the plain image will get out
 	
 	CGRect bounds;
+    
+    CGContextSaveGState(context);
 	
 	if ( Frames > 1 )
 	{
      
 		r->to( &bounds, portHeight );
 		
+        CGContextClipToRect(context, bounds);
+        
 		SInt32 offset = (SInt32)((float)(Frames-1) * value) * r->h + r->h;
 		
 		SInt32 height = Frames * r->h;
@@ -291,7 +295,8 @@ void CAUGuiGraphic::draw( CGContextRef context, UInt32 portHeight, eRect* r, flo
 	if ( Image != NULL )
 			CGContextDrawImage( context, bounds, Image );
 
-
+    CGContextRestoreGState(context);
+    
 }
 
 
@@ -357,16 +362,16 @@ CAUGuiLabel::CAUGuiLabel ( CAUGuiGraphic* theGraphic, eRect* theBounds )
 void CAUGuiLabel::draw( CGContextRef context, UInt32 portHeight, eRect* rect, float value )
 {
 
-	eRect* theBounds;
+	eRect theBounds;
 	
-	theBounds->set( rect );
+	theBounds.set( rect );
 	
-	theBounds->x += Bounds.x;
-	theBounds->y += Bounds.y;
-	theBounds->h = Bounds.h;
-	theBounds->w = Bounds.w;
+	theBounds.x += Bounds.x;
+	theBounds.y += Bounds.y;
+	theBounds.h = Bounds.h;
+	theBounds.w = Bounds.w;
 	
-	Graphic->draw( context, portHeight, theBounds, value );
+	Graphic->draw( context, portHeight, &theBounds, value );
 	
 	
 }
