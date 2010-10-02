@@ -381,7 +381,7 @@ OSStatus EverySynth::HandleMidiEvent(UInt8 inStatus,
 	if (!deviceListDidInit)
 		UpdateMidiDevices();
     
-	int devNr = (int)Globals()->GetParameter(kParam_MidiOutputDevice);
+	int devNr = (int)(Globals()->GetParameter(kParam_MidiOutputDevice) + 0.5);
 	MIDIDeviceList * curDevice = midiDevices;
     
 	GET_CLIST_ENTRY(curDevice,devNr)
@@ -393,7 +393,7 @@ OSStatus EverySynth::HandleMidiEvent(UInt8 inStatus,
 	MIDIPacket * packet = MIDIPacketListInit(&pktlist);
     
 	for (int i=0; i<kNumChannels; i++) {
-		if (inStatus != 0x80 && Parts().GetElement(i)->GetParameter(kParam_Active) == 0)
+		if (inStatus != 0x80 && Parts().GetElement(i)->GetParameter(kParam_Active) < 0.5)
 			continue;
 		
 		UInt8 data[] = {
@@ -500,7 +500,7 @@ void EverySynth::UpdateMidiDevices()
  */
 void EverySynth::InitHardware()
 {
-	Float32 bank_msb, bank_lsb, patch, volume;
+	UInt32 bank_msb, bank_lsb, patch, volume;
 	UInt8 channel;
 	int controlType;
 	AUElement * element;
@@ -519,14 +519,14 @@ void EverySynth::InitHardware()
 			continue;
 		
 		channel = (UInt8)i;
-		controlType = (int)(element->GetParameter(kParam_MidiControlType));
+		controlType = (int)(element->GetParameter(kParam_MidiControlType) + 0.5);
 		
 		switch (controlType) {
 			case midiControlType_PatchSelect:
-				bank_msb = element->GetParameter(kParam_MidiControlPatch_BankMSB);
-				bank_lsb = element->GetParameter(kParam_MidiControlPatch_BankLSB);				
-                patch = element->GetParameter(kParam_MidiControlPatch_Patch);
-				volume = element->GetParameter(kParam_Volume);
+				bank_msb = (UInt8)(element->GetParameter(kParam_MidiControlPatch_BankMSB) + 0.5);
+				bank_lsb = (UInt8)(element->GetParameter(kParam_MidiControlPatch_BankLSB) + 0.5);				
+                patch = (UInt8)(element->GetParameter(kParam_MidiControlPatch_Patch) + 0.5);
+				volume = (UInt8)(element->GetParameter(kParam_Volume) + 0.5);
                 
 				MIDIPacketList pktlist;
 				MIDIPacket * packet = MIDIPacketListInit(&pktlist);
@@ -535,24 +535,24 @@ void EverySynth::InitHardware()
 				// Bank select MSB
 				data[0] = 0xB0 | channel;
 				data[1] = 0x00;
-				data[2] = (UInt8)bank_msb;
+				data[2] = bank_msb;
 				packet = MIDIPacketListAdd(&pktlist,sizeof(pktlist),packet,0,3,data);
 
 				// Bank select LSB
 				data[0] = 0xB0 | channel;
 				data[1] = 0x20;
-				data[2] = (UInt8)bank_lsb;
+				data[2] = bank_lsb;
 				packet = MIDIPacketListAdd(&pktlist,sizeof(pktlist),packet,0,3,data);
                 
 				// Patch select
 				data[0] = 0xC0 | channel;
-				data[1] = (UInt8)patch;
+				data[1] = patch;
 				packet = MIDIPacketListAdd(&pktlist,sizeof(pktlist),packet,0,2,data);
 				
 				// Volume
 				data[0] = 0xB0 | channel;
 				data[1] = 0x07;
-				data[2] = (UInt8)volume;
+				data[2] = volume;
 				packet = MIDIPacketListAdd(&pktlist,sizeof(pktlist),packet,0,3,data);
 				
 				MIDISend(midiPort,curDevice->endpoint,&pktlist);
