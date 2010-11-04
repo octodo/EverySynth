@@ -33,7 +33,11 @@
     - Volume                    (Float) Channel volume.
  */
 
-#define kNumChannels 9
+#ifdef USE_16_CHANNELS
+    #define kNumChannels 16
+#else
+    #define kNumChannels 9
+#endif
 
 /*** Default Values ***/
 

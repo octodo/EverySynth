@@ -167,7 +167,7 @@ OSStatus	EverySynthCarbonUI::CreateUI(Float32 xoffset, Float32 yoffset)
     
     // Channel select buttons    
     where.set(264, 242, kNumChannels*24, 23);
-    channelButtonArray = new CAUGuiRadioArray(theGui, 9, &where, graChannelSelect, NULL);
+    channelButtonArray = new CAUGuiRadioArray(theGui, kNumChannels, &where, graChannelSelect, NULL);
     channelButtonArray->setUserProc(radioArrayProc_ChannelSelect, this);
     paneBackground->addCtrl(channelButtonArray);
 

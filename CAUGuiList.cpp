@@ -173,7 +173,7 @@ void CAUGuiList::draw(CGContextRef context, UInt32 portHeight)
         itemRect.size.height = item_height;
         
         if (itemNames != NULL && CFArrayGetCount(itemNames) > nItem) {
-            CFStringGetBytes((CFStringRef)CFArrayGetValueAtIndex(itemNames, nItem), CFRangeMake(0, 31), 0, (UInt8)'?', false, (UInt8*)text, 32, &usedBufLen);
+            CFStringGetBytes((CFStringRef)CFArrayGetValueAtIndex(itemNames, nItem), CFRangeMake(0, 31), 0, (UInt8)'?', false, (UInt8*)text, 31, &usedBufLen);
             text[usedBufLen] = '\0';
         }
         else if (isAUVPattached() && myParam.HasNamedParams()) {
