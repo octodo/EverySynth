@@ -49,6 +49,7 @@ II. FEATURES
  o Automatic Bank/Patch select
  o Mix volumes of individual channels
  o Simply activate/deactivate them
+ o Support for displaying bank/patch names for known devices
 
  (*) Why the hell 9 channels?? Yeah, because of a bug in Leopard that
  causes a host to crash when it has to display too many parameters.
@@ -56,10 +57,8 @@ II. FEATURES
 
 III. TODO
 
- o A nice Cocoa GUI which allows for:
-    - easier use
-    - sound databases for many different devices
-      to select sounds by name
+ o Move from Carbon to Cocoa for the UI, since essential parts of
+   Carbon are 32-bit only.
  o Maybe handle the audio signal from the synth directly in the plugin,
    so that you don't need an extra audio track for the input.
  o More control over the individual parts:
@@ -77,4 +76,6 @@ Dependencies:
  o Xcode 3.2.2
  
 The Xcode project should build out of the box. If not, please tell me!
+Looks like Apple likes to move the AudioUnit SDK directory around in
+different DevTools versions, this might be a problem.
 

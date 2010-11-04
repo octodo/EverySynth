@@ -661,7 +661,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 3E4BA247089833B7007656EC /* Build configuration list for PBXProject "EverySynth" */;
 			compatibilityVersion = "Xcode 3.0";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* EverySynth */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -793,7 +800,7 @@
 					AU_DEBUG_DISPATCHER,
 					DEBUG_PRINT,
 				);
-				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -900,7 +907,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = EverySynth_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG_PRINT;
-				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -918,7 +925,8 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = EverySynth_Prefix.pch;
-				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WARNING_CFLAGS = (
 					"-Wmost",
